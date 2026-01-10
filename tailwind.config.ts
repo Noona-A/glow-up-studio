@@ -57,22 +57,31 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
+        // Brand colors - Purple/Lavender theme
+        purple: {
+          DEFAULT: "hsl(var(--purple))",
+          deep: "hsl(var(--purple-deep))",
+          light: "hsl(var(--purple-light))",
         },
-        rose: {
-          DEFAULT: "hsl(var(--rose))",
-          light: "hsl(var(--rose-light))",
+        lavender: {
+          DEFAULT: "hsl(var(--lavender))",
+          light: "hsl(var(--lavender-light))",
+          glow: "hsl(var(--lavender-glow))",
         },
-        sage: {
-          DEFAULT: "hsl(var(--sage))",
-          light: "hsl(var(--sage-light))",
+        blush: "hsl(var(--blush))",
+        cream: "hsl(var(--cream))",
+        "warm-white": "hsl(var(--warm-white))",
+        // Legacy compatibility
+        burgundy: {
+          DEFAULT: "hsl(var(--burgundy))",
+          deep: "hsl(var(--burgundy-deep))",
+          light: "hsl(var(--burgundy-light))",
         },
-      },
-      fontFamily: {
-        display: ['Playfair Display', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        orange: {
+          DEFAULT: "hsl(var(--orange))",
+          light: "hsl(var(--orange-light))",
+          glow: "hsl(var(--orange-glow))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
