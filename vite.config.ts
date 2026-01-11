@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { copyFileSync } from "fs";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -11,7 +12,22 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(), 
+    mode === "development" && componentTagger(),
+    // Copy CNAME file to dist for GitHub Pages custom domain
+    {
+      name: "copy-cname",
+      closeBundle() {
+        try {
+          copyFileSync("CNAME", "dist/CNAME");
+          console.log("✓ Copied CNAME to dist/");
+        } catch (err) {
+          console.warn("⚠ Could not copy CNAME:", err);
+        }
+      }
+    }
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
