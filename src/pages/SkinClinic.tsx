@@ -190,9 +190,7 @@ const SkinClinic = () => {
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  "Finally someone who actually listened to my skin concerns instead of just trying to sell me stuff."
-                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed">"Finally someone who actually listened to my concerns instead of just trying to sell me stuff."</p>
                 <p className="text-xs text-muted-foreground/70 mt-4">— Emma, acne consultation</p>
               </div>
 
@@ -201,9 +199,7 @@ const SkinClinic = () => {
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  "I've wasted so much money on products that didn't work for my skin. After one consultation I finally understand what my skin actually needs. My routine is simpler now and my skin looks way better — wish I'd done this years ago!"
-                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed">"I've wasted so much money on products that didn't work for my skin. After one consultation I finally understand what my skin actually needs. My routine is simpler now and my skin looks way better, wish I'd done this years ago!"</p>
                 <p className="text-xs text-muted-foreground/70 mt-4">— Nadia, sensitive skin</p>
               </div>
 
@@ -223,9 +219,7 @@ const SkinClinic = () => {
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  "I came in feeling completely overwhelmed — I had about 15 products in my bathroom and no idea what order to use them in or if they even worked together. The consultation was so thorough. We went through everything, talked about my skin type, what ingredients I should focus on, and what I could cut out. It wasn't about buying new things — it was about actually understanding my skin. Best £20 I've spent in ages."
-                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed">"I came in feeling completely overwhelmed — I had about 15 products in my bathroom and no idea what order to use them in or if they even worked together. The consultation was so thorough. We went through everything, talked about my skin type, what ingredients I should focus on, and what I could cut out. It wasn't about buying new things. it was about actually understanding my skin. Best £20 I've spent in ages."</p>
                 <p className="text-xs text-muted-foreground/70 mt-4">— Zara, routine overhaul</p>
               </div>
 
