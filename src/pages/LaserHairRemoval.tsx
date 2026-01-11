@@ -5,82 +5,63 @@ import SEO from "@/components/SEO";
 import laserHeroImg from "@/assets/laser-hero.jpg";
 import laserResult1 from "@/assets/laser-result-1.jpg";
 import laserResult2 from "@/assets/laser-result-2.jpg";
-
-const steps = [
-  { 
-    number: "1",
-    icon: ClipboardCheck, 
-    title: "Patch Test", 
-    description: "Required before your first session to ensure safety and suitability." 
-  },
-  { 
-    number: "2",
-    icon: Zap, 
-    title: "Laser Treatment", 
-    description: "Targeted treatment using medical-grade laser technology." 
-  },
-  { 
-    number: "3",
-    icon: Calendar, 
-    title: "Treatment Course", 
-    description: "A series of sessions for long-lasting hair reduction." 
-  },
-  { 
-    number: "4",
-    icon: RefreshCw, 
-    title: "Maintenance", 
-    description: "Optional maintenance sessions as needed." 
-  },
-];
-
-const safetyPoints = [
-  "Medical-grade laser equipment",
-  "Treatments delivered by a UK-registered pharmacist",
-  "Patch test required for new clients",
-  "Safety-first, evidence-based protocols"
-];
-
-const beforeTreatment = [
-  "Shave the area 12–24 hours before your appointment — surface hair can absorb laser energy; shaving keeps the follicle intact",
-  "Avoid waxing, plucking, or epilation for 4–6 weeks before treatment — these remove the structure the laser targets",
-  "Avoid sun exposure, self-tan, and sunbeds for at least 2–4 weeks — tanned skin increases burn and pigmentation risk",
-  "Stop retinoids, exfoliants, and acids 3–7 days prior if advised — these increase skin sensitivity",
-  "Arrive with clean, product-free skin — no lotions, oils, make-up, deodorants or moisturisers on the treatment area",
-  "Discuss any medications or skin conditions with your therapist to rule out photosensitising effects"
-];
-
-const afterTreatment = [
-  "Avoid direct UV exposure and tanning beds for 2–4 weeks — apply SPF50+ daily to treated areas",
-  "Avoid heat, saunas, steam rooms, and strenuous exercise for 48–72 hours to prevent inflammation",
-  "Keep the area gentle — avoid tight clothing, scrubs, and fragranced products for 48–72 hours",
-  "Do not shave for at least 48–72 hours — plucking or waxing remains contraindicated throughout your course",
-  "Apply light cooling compresses or a soothing gel to reduce redness and discomfort"
-];
-
-const bestPractices = [
-  "Follow your personalised schedule — typically 4–8 weeks apart — to catch hairs in successive growth cycles",
-  "Shave consistently prior to each session for optimal laser penetration",
-  "Protect treated skin from UV daily to avoid pigmentation changes and support uniform results",
-  "Maintain hydration and gentle skincare between treatment days",
-  "Avoid smoking and excessive alcohol around treatments — these can affect circulation and healing"
-];
-
-const whoShouldBeCautious = [
-  { condition: "Diabetes", reason: "Slower healing times may increase infection risk" },
-  { condition: "History of cold sores (herpes simplex)", reason: "Laser can trigger an outbreak — antiviral medication may be required beforehand" },
-  { condition: "PCOS or hormonal imbalances", reason: "May require more sessions and maintenance as results can be less predictable" },
-  { condition: "Moles or tattoos in treatment area", reason: "Laser must avoid these areas with a 5mm–2cm perimeter" }
-];
-
-const whoShouldAvoid = [
-  { condition: "Active skin infections", reason: "Cold sores, impetigo, fungal infections, eczema or psoriasis in the treatment area" },
-  { condition: "Recent sun exposure or fake tan", reason: "Wait at least 4–6 weeks (natural/UV) or 10 days (fake tan) to reduce burn risk" },
-  { condition: "Roaccutane (isotretinoin) users", reason: "Must wait at least 6 months after finishing oral retinoids" },
-  { condition: "Pregnancy or breastfeeding", reason: "Avoided due to hormonal changes affecting results and lack of safety data" },
-  { condition: "History of keloid scarring", reason: "High risk of permanent scarring" },
-  { condition: "Photosensitising medications", reason: "Certain drugs (e.g., St John's Wort, some antibiotics) increase light sensitivity" }
-];
-
+const steps = [{
+  number: "1",
+  icon: ClipboardCheck,
+  title: "Patch Test",
+  description: "Required before your first session to ensure safety and suitability."
+}, {
+  number: "2",
+  icon: Zap,
+  title: "Laser Treatment",
+  description: "Targeted treatment using medical-grade laser technology."
+}, {
+  number: "3",
+  icon: Calendar,
+  title: "Treatment Course",
+  description: "A series of sessions for long-lasting hair reduction."
+}, {
+  number: "4",
+  icon: RefreshCw,
+  title: "Maintenance",
+  description: "Optional maintenance sessions as needed."
+}];
+const safetyPoints = ["Medical-grade laser equipment", "Treatments delivered by a UK-registered pharmacist", "Patch test required for new clients", "Safety-first, evidence-based protocols"];
+const beforeTreatment = ["Shave the area 12–24 hours before your appointment — surface hair can absorb laser energy; shaving keeps the follicle intact", "Avoid waxing, plucking, or epilation for 4–6 weeks before treatment — these remove the structure the laser targets", "Avoid sun exposure, self-tan, and sunbeds for at least 2–4 weeks — tanned skin increases burn and pigmentation risk", "Stop retinoids, exfoliants, and acids 3–7 days prior if advised — these increase skin sensitivity", "Arrive with clean, product-free skin — no lotions, oils, make-up, deodorants or moisturisers on the treatment area", "Discuss any medications or skin conditions with your therapist to rule out photosensitising effects"];
+const afterTreatment = ["Avoid direct UV exposure and tanning beds for 2–4 weeks — apply SPF50+ daily to treated areas", "Avoid heat, saunas, steam rooms, and strenuous exercise for 48–72 hours to prevent inflammation", "Keep the area gentle — avoid tight clothing, scrubs, and fragranced products for 48–72 hours", "Do not shave for at least 48–72 hours — plucking or waxing remains contraindicated throughout your course", "Apply light cooling compresses or a soothing gel to reduce redness and discomfort"];
+const bestPractices = ["Follow your personalised schedule — typically 4–8 weeks apart — to catch hairs in successive growth cycles", "Shave consistently prior to each session for optimal laser penetration", "Protect treated skin from UV daily to avoid pigmentation changes and support uniform results", "Maintain hydration and gentle skincare between treatment days", "Avoid smoking and excessive alcohol around treatments — these can affect circulation and healing"];
+const whoShouldBeCautious = [{
+  condition: "Diabetes",
+  reason: "Slower healing times may increase infection risk"
+}, {
+  condition: "History of cold sores (herpes simplex)",
+  reason: "Laser can trigger an outbreak — antiviral medication may be required beforehand"
+}, {
+  condition: "PCOS or hormonal imbalances",
+  reason: "May require more sessions and maintenance as results can be less predictable"
+}, {
+  condition: "Moles or tattoos in treatment area",
+  reason: "Laser must avoid these areas with a 5mm–2cm perimeter"
+}];
+const whoShouldAvoid = [{
+  condition: "Active skin infections",
+  reason: "Cold sores, impetigo, fungal infections, eczema or psoriasis in the treatment area"
+}, {
+  condition: "Recent sun exposure or fake tan",
+  reason: "Wait at least 4–6 weeks (natural/UV) or 10 days (fake tan) to reduce burn risk"
+}, {
+  condition: "Roaccutane (isotretinoin) users",
+  reason: "Must wait at least 6 months after finishing oral retinoids"
+}, {
+  condition: "Pregnancy or breastfeeding",
+  reason: "Avoided due to hormonal changes affecting results and lack of safety data"
+}, {
+  condition: "History of keloid scarring",
+  reason: "High risk of permanent scarring"
+}, {
+  condition: "Photosensitising medications",
+  reason: "Certain drugs (e.g., St John's Wort, some antibiotics) increase light sensitivity"
+}];
 const LaserHairRemoval = () => {
   const structuredData = {
     "@context": "https://schema.org",
@@ -97,16 +78,8 @@ const LaserHairRemoval = () => {
     },
     "description": "Professional laser hair removal treatments using medical-grade technology at ReSKN Clinic in Windsor, Berkshire."
   };
-
-  return (
-    <>
-      <SEO
-        title="Laser Hair Removal | ReSKN Clinic Windsor"
-        description="Professional laser hair removal in Windsor. Medical-grade technology, expert care by UK-registered pharmacist. Book your patch test at ReSKN Clinic today."
-        keywords="ReSKN, laser hair removal Windsor, laser hair removal Berkshire, ReSKN Clinic, permanent hair removal, medical grade laser"
-        canonical="https://resknclinic.co.uk/laser-hair-removal"
-        structuredData={structuredData}
-      />
+  return <>
+      <SEO title="Laser Hair Removal | ReSKN Clinic Windsor" description="Professional laser hair removal in Windsor. Medical-grade technology, expert care by UK-registered pharmacist. Book your patch test at ReSKN Clinic today." keywords="ReSKN, laser hair removal Windsor, laser hair removal Berkshire, ReSKN Clinic, permanent hair removal, medical grade laser" canonical="https://resknclinic.co.uk/laser-hair-removal" structuredData={structuredData} />
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-gradient-to-b from-lavender-light via-background to-background overflow-hidden">
         <div className="palm-shadow-overlay" />
@@ -146,11 +119,7 @@ const LaserHairRemoval = () => {
               {/* Right Image */}
               <div className="relative">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src={laserHeroImg} 
-                    alt="Medical-grade laser treatment"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={laserHeroImg} alt="Medical-grade laser treatment" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -182,8 +151,7 @@ const LaserHairRemoval = () => {
               <p className="text-lg text-muted-foreground max-w-xl mx-auto">Your journey to smooth, hair-free skin</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {steps.map((step, index) => (
-                <div key={step.title} className="relative">
+              {steps.map((step, index) => <div key={step.title} className="relative">
                   <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold z-10">
                     {step.number}
                   </div>
@@ -194,8 +162,7 @@ const LaserHairRemoval = () => {
                     <h3 className="font-serif text-lg font-semibold text-foreground mb-2">{step.title}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -229,12 +196,10 @@ const LaserHairRemoval = () => {
                 Preparing your skin correctly sets the foundation for both safety and effectiveness — allowing the laser energy to reach the hair follicle efficiently while minimising irritation.
               </p>
               <ul className="space-y-3">
-                {beforeTreatment.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                {beforeTreatment.map((item, index) => <li key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground text-sm">{item}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -250,12 +215,10 @@ const LaserHairRemoval = () => {
                 Post-treatment aftercare is essential to allow controlled healing, prevent complications, and protect skin while it's most vulnerable.
               </p>
               <ul className="space-y-3">
-                {afterTreatment.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                {afterTreatment.map((item, index) => <li key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground text-sm">{item}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -271,12 +234,10 @@ const LaserHairRemoval = () => {
                 Laser hair removal works by targeting hair in its active growth (anagen) phase — not all hairs are in this phase at once, so multiple sessions are required.
               </p>
               <ul className="space-y-3">
-                {bestPractices.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                {bestPractices.map((item, index) => <li key={index} className="flex items-start gap-3">
                     <Sparkles className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground text-sm">{item}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </div>
@@ -306,15 +267,13 @@ const LaserHairRemoval = () => {
                 If any of the following apply, please discuss with your therapist during your consultation or patch test.
               </p>
               <ul className="space-y-4">
-                {whoShouldBeCautious.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                {whoShouldBeCautious.map((item, index) => <li key={index} className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium text-foreground">{item.condition}</span>
                       <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
                     </div>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -328,15 +287,13 @@ const LaserHairRemoval = () => {
                 According to UK clinical guidelines (BMLA, NHS), the following are contraindications for laser hair removal.
               </p>
               <ul className="space-y-4">
-                {whoShouldAvoid.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                {whoShouldAvoid.map((item, index) => <li key={index} className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium text-foreground">{item.condition}</span>
                       <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
                     </div>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -372,12 +329,10 @@ const LaserHairRemoval = () => {
               </div>
               
               <div className="grid sm:grid-cols-2 gap-4">
-                {safetyPoints.map((point, index) => (
-                  <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-accent/50">
+                {safetyPoints.map((point, index) => <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-accent/50">
                     <Check size={20} className="text-primary flex-shrink-0" />
                     <span className="text-foreground">{point}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -401,21 +356,13 @@ const LaserHairRemoval = () => {
             <div className="grid sm:grid-cols-2 gap-6 mb-14">
               <div className="card-luxury p-4 overflow-hidden">
                 <div className="aspect-square rounded-lg overflow-hidden mb-4">
-                  <img 
-                    src={laserResult1} 
-                    alt="Smooth underarm result after laser treatment"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={laserResult1} alt="Smooth underarm result after laser treatment" className="w-full h-full object-cover" />
                 </div>
                 <p className="text-sm text-muted-foreground text-center">Underarm — after 6 sessions</p>
               </div>
               <div className="card-luxury p-4 overflow-hidden">
                 <div className="aspect-square rounded-lg overflow-hidden mb-4">
-                  <img 
-                    src={laserResult2} 
-                    alt="Smooth leg result after laser treatment"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={laserResult2} alt="Smooth leg result after laser treatment" className="w-full h-full object-cover" />
                 </div>
                 <p className="text-sm text-muted-foreground text-center">Full leg — after 8 sessions</p>
               </div>
@@ -426,9 +373,7 @@ const LaserHairRemoval = () => {
               {/* Review 1 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "Honestly didn't think it would work for me but after 4 sessions I barely have any regrowth. So happy I finally did it!"
@@ -439,9 +384,7 @@ const LaserHairRemoval = () => {
               {/* Review 2 - Medium */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "Was really nervous about my first session (I'm a total wimp with pain lol) but it was completely fine. The cooling gel helps loads. Already seeing less hair after just 2 appointments. The clinic is lovely too — feels proper professional, not like those high street places."
@@ -452,9 +395,7 @@ const LaserHairRemoval = () => {
               {/* Review 3 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "Best money I've spent. No more razor burn or ingrown hairs. Game changer."
@@ -465,9 +406,7 @@ const LaserHairRemoval = () => {
               {/* Review 4 - Long */}
               <div className="card-luxury p-6 md:col-span-2">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "I've been wanting to do laser for years but kept putting it off because I wasn't sure if it would work on my skin tone (I'm South Asian). Had a really thorough consultation where everything was explained properly — the patch test, what to expect, aftercare, all of it. I'm now 5 sessions in and the difference is incredible. Wish I'd done it sooner! The team are so knowledgeable and never make you feel rushed."
@@ -478,9 +417,7 @@ const LaserHairRemoval = () => {
               {/* Review 5 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "Quick, easy, actually works. What more can you ask for? 👌"
@@ -489,9 +426,7 @@ const LaserHairRemoval = () => {
               </div>
             </div>
 
-            <p className="text-xs text-center text-muted-foreground mt-8">
-              Reviews shown are placeholder examples. Real client testimonials coming soon.
-            </p>
+            
           </div>
         </div>
       </section>
@@ -546,8 +481,6 @@ const LaserHairRemoval = () => {
           </div>
         </div>
       </section>
-    </>
-  );
+    </>;
 };
-
 export default LaserHairRemoval;
