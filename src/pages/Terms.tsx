@@ -1,4 +1,4 @@
-const Terms = () => <div className="pt-24 pb-16 py-[60px]">
+const Terms = () => <div className="pt-16 pb-16">
     <div className="container mx-auto px-4 max-w-3xl">
       <h1 className="font-serif text-4xl mb-6">Terms of Service</h1>
       <p className="text-muted-foreground mb-6">By using ReSKN Clinic services, you agree to these terms.</p>

@@ -6,7 +6,7 @@ const QuizResults = () => {
   const [params] = useSearchParams();
   const profileKey = params.get("profile") || "balanced";
   const profile = profiles[profileKey] || profiles.balanced;
-  return <div className="pt-24 pb-16 py-[60px]">
+  return <div className="pt-16 pb-16">
       <div className="container mx-auto px-4 max-w-3xl">
         {/* Header */}
         <div className="text-center mb-10">

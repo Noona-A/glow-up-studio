@@ -82,7 +82,7 @@ const Quiz = () => {
   }, [step, isTransitioning]);
   const progress = (step + 1) / questions.length * 100;
   const current = questions[step];
-  return <div className="pt-24 pb-16 min-h-[80vh] flex items-center py-[60px]">
+  return <div className="pt-16 pb-16 min-h-[80vh] flex items-center">
       <div className="container mx-auto px-4 max-w-2xl">
         {/* Progress Section */}
         <div className="mb-8">
