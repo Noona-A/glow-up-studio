@@ -47,7 +47,7 @@ const SkinClinic = () => {
   const concerns = ["Acne & breakouts", "Pigmentation & melasma", "Sensitive or reactive skin", "Dullness & dehydration", "Early signs of ageing"];
   return <>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-b from-lavender-light via-background to-background overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-b from-lavender-light via-background to-background overflow-hidden md:py-[60px]">
         <div className="palm-shadow-overlay" />
         <div className="container mx-auto relative z-10 px-px">
           <div className="max-w-6xl mx-auto">
