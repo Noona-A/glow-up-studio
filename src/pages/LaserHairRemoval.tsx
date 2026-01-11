@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ClipboardCheck, Zap, Calendar, RefreshCw, Check, Shield, ShieldCheck, ArrowRight, Sparkles, Star } from "lucide-react";
+import { ClipboardCheck, Zap, Calendar, RefreshCw, Check, Shield, ShieldCheck, ArrowRight, Sparkles, Star, Sun, Droplets, AlertTriangle, XCircle, CheckCircle, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import laserHeroImg from "@/assets/laser-hero.jpg";
@@ -36,6 +36,47 @@ const safetyPoints = [
   "Treatments delivered by a UK-registered pharmacist",
   "Patch test required for new clients",
   "Safety-first, evidence-based protocols"
+];
+
+const beforeTreatment = [
+  "Shave the area 12–24 hours before your appointment — surface hair can absorb laser energy; shaving keeps the follicle intact",
+  "Avoid waxing, plucking, or epilation for 4–6 weeks before treatment — these remove the structure the laser targets",
+  "Avoid sun exposure, self-tan, and sunbeds for at least 2–4 weeks — tanned skin increases burn and pigmentation risk",
+  "Stop retinoids, exfoliants, and acids 3–7 days prior if advised — these increase skin sensitivity",
+  "Arrive with clean, product-free skin — no lotions, oils, make-up, deodorants or moisturisers on the treatment area",
+  "Discuss any medications or skin conditions with your therapist to rule out photosensitising effects"
+];
+
+const afterTreatment = [
+  "Avoid direct UV exposure and tanning beds for 2–4 weeks — apply SPF50+ daily to treated areas",
+  "Avoid heat, saunas, steam rooms, and strenuous exercise for 48–72 hours to prevent inflammation",
+  "Keep the area gentle — avoid tight clothing, scrubs, and fragranced products for 48–72 hours",
+  "Do not shave for at least 48–72 hours — plucking or waxing remains contraindicated throughout your course",
+  "Apply light cooling compresses or a soothing gel to reduce redness and discomfort"
+];
+
+const bestPractices = [
+  "Follow your personalised schedule — typically 4–8 weeks apart — to catch hairs in successive growth cycles",
+  "Shave consistently prior to each session for optimal laser penetration",
+  "Protect treated skin from UV daily to avoid pigmentation changes and support uniform results",
+  "Maintain hydration and gentle skincare between treatment days",
+  "Avoid smoking and excessive alcohol around treatments — these can affect circulation and healing"
+];
+
+const whoShouldBeCautious = [
+  { condition: "Diabetes", reason: "Slower healing times may increase infection risk" },
+  { condition: "History of cold sores (herpes simplex)", reason: "Laser can trigger an outbreak — antiviral medication may be required beforehand" },
+  { condition: "PCOS or hormonal imbalances", reason: "May require more sessions and maintenance as results can be less predictable" },
+  { condition: "Moles or tattoos in treatment area", reason: "Laser must avoid these areas with a 5mm–2cm perimeter" }
+];
+
+const whoShouldAvoid = [
+  { condition: "Active skin infections", reason: "Cold sores, impetigo, fungal infections, eczema or psoriasis in the treatment area" },
+  { condition: "Recent sun exposure or fake tan", reason: "Wait at least 4–6 weeks (natural/UV) or 10 days (fake tan) to reduce burn risk" },
+  { condition: "Roaccutane (isotretinoin) users", reason: "Must wait at least 6 months after finishing oral retinoids" },
+  { condition: "Pregnancy or breastfeeding", reason: "Avoided due to hormonal changes affecting results and lack of safety data" },
+  { condition: "History of keloid scarring", reason: "High risk of permanent scarring" },
+  { condition: "Photosensitising medications", reason: "Certain drugs (e.g., St John's Wort, some antibiotics) increase light sensitivity" }
 ];
 
 const LaserHairRemoval = () => {
@@ -153,6 +194,158 @@ const LaserHairRemoval = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Treatment Guide Section */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-14">
+              <span className="inline-block px-4 py-2 bg-accent rounded-full text-sm mb-4">
+                Treatment Guide
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
+                Prepare for the best results
+              </h2>
+              <p className="text-muted-foreground">
+                Following these guidelines ensures both safety and effectiveness of your laser hair removal course.
+              </p>
+            </div>
+
+            {/* Before Treatment Card */}
+            <div className="card-luxury p-8 mb-6">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <ClipboardCheck className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-serif text-xl">Before your treatment</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm">
+                Preparing your skin correctly sets the foundation for both safety and effectiveness — allowing the laser energy to reach the hair follicle efficiently while minimising irritation.
+              </p>
+              <ul className="space-y-3">
+                {beforeTreatment.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* After Treatment Card */}
+            <div className="card-luxury p-8 mb-6">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Sun className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-serif text-xl">After your treatment</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm">
+                Post-treatment aftercare is essential to allow controlled healing, prevent complications, and protect skin while it's most vulnerable.
+              </p>
+              <ul className="space-y-3">
+                {afterTreatment.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Best Results Card */}
+            <div className="card-luxury p-8 mb-6 bg-gradient-to-br from-secondary/5 to-primary/5">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-serif text-xl">For best results</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm">
+                Laser hair removal works by targeting hair in its active growth (anagen) phase — not all hairs are in this phase at once, so multiple sessions are required.
+              </p>
+              <ul className="space-y-3">
+                {bestPractices.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Sparkles className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Suitability Section */}
+      <section className="py-20 md:py-28 bg-section-gradient">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-14">
+              <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
+                Is laser hair removal right for you?
+              </h2>
+              <p className="text-muted-foreground">
+                While laser is suitable for most skin types (Fitzpatrick I-VI), some conditions require extra care or may mean treatment isn't recommended.
+              </p>
+            </div>
+
+            {/* Who Should Be Cautious */}
+            <div className="card-luxury p-8 mb-6 border-l-4 border-l-amber-500">
+              <div className="flex items-center gap-3 mb-6">
+                <AlertTriangle className="w-5 h-5 text-amber-600" />
+                <h3 className="font-serif text-xl">Proceed with caution</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm">
+                If any of the following apply, please discuss with your therapist during your consultation or patch test.
+              </p>
+              <ul className="space-y-4">
+                {whoShouldBeCautious.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-foreground">{item.condition}</span>
+                      <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Who Should Avoid */}
+            <div className="card-luxury p-8 mb-6 border-l-4 border-l-red-400">
+              <div className="flex items-center gap-3 mb-6">
+                <XCircle className="w-5 h-5 text-red-500" />
+                <h3 className="font-serif text-xl">Treatment not recommended</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm">
+                According to UK clinical guidelines (BMLA, NHS), the following are contraindications for laser hair removal.
+              </p>
+              <ul className="space-y-4">
+                {whoShouldAvoid.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-foreground">{item.condition}</span>
+                      <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Clinical Disclaimer */}
+            <div className="card-luxury p-6 bg-muted/30 border-l-4 border-l-primary/30">
+              <div className="flex items-start gap-3">
+                <Info className="w-5 h-5 text-primary/70 flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  This information is based on guidance from the British Medical Laser Association (BMLA) and NHS. It is provided for educational purposes and does not replace a personalised assessment. All clients receive a full consultation and patch test before treatment.
+                </p>
+              </div>
             </div>
           </div>
         </div>
