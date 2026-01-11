@@ -27,7 +27,7 @@ const steps = [{
   title: "Maintenance",
   description: "Optional maintenance sessions as needed."
 }];
-const safetyPoints = ["Medical-grade laser equipment", "Treatments delivered by a UK-registered pharmacist", "Patch test required for new clients", "Safety-first, evidence-based protocols"];
+const safetyPoints = ["Medical-grade 808nm diode laser with 4 wavelengths", "Treatments delivered by a UK-registered pharmacist", "Patch test required for new clients", "Safety-first, evidence-based protocols"];
 const beforeTreatment = ["Shave the area 12–24 hours before your appointment — surface hair can absorb laser energy; shaving keeps the follicle intact", "Avoid waxing, plucking, or epilation for 4–6 weeks before treatment — these remove the structure the laser targets", "Avoid sun exposure, self-tan, and sunbeds for at least 2–4 weeks — tanned skin increases burn and pigmentation risk", "Stop retinoids, exfoliants, and acids 3–7 days prior if advised — these increase skin sensitivity", "Arrive with clean, product-free skin — no lotions, oils, make-up, deodorants or moisturisers on the treatment area", "Discuss any medications or skin conditions with your therapist to rule out photosensitising effects"];
 const afterTreatment = ["Avoid direct UV exposure and tanning beds for 2–4 weeks — apply SPF50+ daily to treated areas", "Avoid heat, saunas, steam rooms, and strenuous exercise for 48–72 hours to prevent inflammation", "Keep the area gentle — avoid tight clothing, scrubs, and fragranced products for 48–72 hours", "Do not shave for at least 48–72 hours — plucking or waxing remains contraindicated throughout your course", "Apply light cooling compresses or a soothing gel to reduce redness and discomfort"];
 const bestPractices = ["Follow your personalised schedule — typically 4–8 weeks apart — to catch hairs in successive growth cycles", "Shave consistently prior to each session for optimal laser penetration", "Protect treated skin from UV daily to avoid pigmentation changes and support uniform results", "Maintain hydration and gentle skincare between treatment days", "Avoid smoking and excessive alcohol around treatments — these can affect circulation and healing"];
@@ -39,7 +39,7 @@ const idealCandidates = [
   },
   {
     condition: "All skin types (Fitzpatrick I–VI)",
-    reason: "Modern Nd:YAG laser technology can safely treat darker skin tones by bypassing surface pigment"
+    reason: "Our 808nm diode laser with 4 wavelengths can safely treat all skin tones, including darker complexions"
   },
   {
     condition: "Coarse or thick hair",
@@ -47,7 +47,7 @@ const idealCandidates = [
   },
   {
     condition: "PCOS (Polycystic Ovary Syndrome)",
-    reason: "NHS-recommended treatment for managing facial and body hair caused by hormonal imbalances — often covered by some NHS trusts"
+    reason: "Clinically recommended for managing unwanted facial and body hair caused by hormonal imbalances"
   },
   {
     condition: "Hirsutism",
@@ -55,7 +55,11 @@ const idealCandidates = [
   },
   {
     condition: "Pilonidal sinus (post-surgery)",
-    reason: "Often NHS-funded to reduce hair regrowth and lower the risk of recurrence after surgery"
+    reason: "Recommended to reduce hair regrowth and lower the risk of recurrence after surgical treatment"
+  },
+  {
+    condition: "Gender transition (pre-surgical hair removal)",
+    reason: "Per NHS and NICE guidelines, laser hair removal is recommended for facial hair and genital donor sites before gender-affirming surgery — we provide a supportive, confidential service"
   }
 ];
 
