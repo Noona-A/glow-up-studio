@@ -4,8 +4,8 @@ import { ClipboardCheck, Zap, Calendar, RefreshCw, Check, Shield, ShieldCheck, A
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import laserHeroImg from "@/assets/laser-hero.jpg";
-import laserResult1 from "@/assets/laser-result-1.jpg";
-import laserResult2 from "@/assets/laser-result-2.jpg";
+import laserResultArmpit from "@/assets/laser-result-armpit.jpg";
+import laserResultLeg from "@/assets/laser-result-leg.jpg";
 const steps = [{
   number: "1",
   icon: ClipboardCheck,
@@ -478,16 +478,16 @@ const LaserHairRemoval = () => {
             {/* Results Gallery */}
             <div className="grid sm:grid-cols-2 gap-6 mb-14">
               <div className="card-luxury p-4 overflow-hidden">
-                <div className="aspect-square rounded-lg overflow-hidden mb-4">
-                  <img src={laserResult1} alt="Smooth underarm result after laser treatment" className="w-full h-full object-cover" />
+                <div className="aspect-[3/4] rounded-lg overflow-hidden mb-4">
+                  <img src={laserResultArmpit} alt="Underarm hair reduction after 2 laser sessions" className="w-full h-full object-cover" />
                 </div>
-                <p className="text-sm text-muted-foreground text-center">Underarm — after 6 sessions</p>
+                <p className="text-sm text-muted-foreground text-center">Underarm — after 2 sessions</p>
               </div>
               <div className="card-luxury p-4 overflow-hidden">
-                <div className="aspect-square rounded-lg overflow-hidden mb-4">
-                  <img src={laserResult2} alt="Smooth leg result after laser treatment" className="w-full h-full object-cover" />
+                <div className="aspect-[3/4] rounded-lg overflow-hidden mb-4">
+                  <img src={laserResultLeg} alt="Leg hair reduction after 4 laser sessions" className="w-full h-full object-cover" />
                 </div>
-                <p className="text-sm text-muted-foreground text-center">Full leg — after 8 sessions</p>
+                <p className="text-sm text-muted-foreground text-center">Leg — after 4 sessions</p>
               </div>
             </div>
 
