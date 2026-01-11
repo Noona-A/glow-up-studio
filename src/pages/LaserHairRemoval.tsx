@@ -81,7 +81,7 @@ const LaserHairRemoval = () => {
   return <>
       <SEO title="Laser Hair Removal | ReSKN Clinic Windsor" description="Professional laser hair removal in Windsor. Medical-grade technology, expert care by UK-registered pharmacist. Book your patch test at ReSKN Clinic today." keywords="ReSKN, laser hair removal Windsor, laser hair removal Berkshire, ReSKN Clinic, permanent hair removal, medical grade laser" canonical="https://resknclinic.co.uk/laser-hair-removal" structuredData={structuredData} />
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-b from-lavender-light via-background to-background overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-b from-lavender-light via-background to-background overflow-hidden md:py-[60px]">
         <div className="palm-shadow-overlay" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
