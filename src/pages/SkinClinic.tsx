@@ -3,57 +3,49 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, MessageCircle, Search, ClipboardList, HeartHandshake, Shield, CheckCircle, Heart, BookOpen, Leaf, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import skinClinicHeroImg from "@/assets/skin-clinic-hero.jpg";
-
 const SkinClinic = () => {
   useEffect(() => {
     document.title = "Skin Clinic | ReSKN Clinic Windsor";
   }, []);
-
-  const steps = [
-    {
-      number: "1",
-      icon: MessageCircle,
-      title: "Consultation",
-      description: "We discuss your skin history, routine, lifestyle, and concerns."
-    },
-    {
-      number: "2",
-      icon: Search,
-      title: "Assessment",
-      description: "Your skin is assessed to identify underlying causes, not just symptoms."
-    },
-    {
-      number: "3",
-      icon: ClipboardList,
-      title: "Personalised Plan",
-      description: "You receive clear product, ingredient, and treatment recommendations."
-    },
-    {
-      number: "4",
-      icon: HeartHandshake,
-      title: "Follow-up Support",
-      description: "Optional ongoing reviews to adjust your routine as your skin improves."
-    }
-  ];
-
-  const benefits = [
-    { icon: Shield, title: "Expert, pharmacist-led advice" },
-    { icon: ClipboardList, title: "Personalised skincare routine" },
-    { icon: BookOpen, title: "Ingredient education (what to use & avoid)" },
-    { icon: Leaf, title: "Product guidance with optional recommendations" },
-    { icon: CheckCircle, title: "Safe, evidence-based approach" }
-  ];
-
-  const concerns = [
-    "Acne & breakouts",
-    "Pigmentation & melasma",
-    "Sensitive or reactive skin",
-    "Dullness & dehydration",
-    "Early signs of ageing"
-  ];
-
-  return (
-    <>
+  const steps = [{
+    number: "1",
+    icon: MessageCircle,
+    title: "Consultation",
+    description: "We discuss your skin history, routine, lifestyle, and concerns."
+  }, {
+    number: "2",
+    icon: Search,
+    title: "Assessment",
+    description: "Your skin is assessed to identify underlying causes, not just symptoms."
+  }, {
+    number: "3",
+    icon: ClipboardList,
+    title: "Personalised Plan",
+    description: "You receive clear product, ingredient, and treatment recommendations."
+  }, {
+    number: "4",
+    icon: HeartHandshake,
+    title: "Follow-up Support",
+    description: "Optional ongoing reviews to adjust your routine as your skin improves."
+  }];
+  const benefits = [{
+    icon: Shield,
+    title: "Expert, pharmacist-led advice"
+  }, {
+    icon: ClipboardList,
+    title: "Personalised skincare routine"
+  }, {
+    icon: BookOpen,
+    title: "Ingredient education (what to use & avoid)"
+  }, {
+    icon: Leaf,
+    title: "Product guidance with optional recommendations"
+  }, {
+    icon: CheckCircle,
+    title: "Safe, evidence-based approach"
+  }];
+  const concerns = ["Acne & breakouts", "Pigmentation & melasma", "Sensitive or reactive skin", "Dullness & dehydration", "Early signs of ageing"];
+  return <>
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-gradient-to-b from-lavender-light via-background to-background overflow-hidden">
         <div className="palm-shadow-overlay" />
@@ -92,11 +84,7 @@ const SkinClinic = () => {
               {/* Right Image */}
               <div className="relative">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src={skinClinicHeroImg} 
-                    alt="Glowing, healthy skin"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={skinClinicHeroImg} alt="Glowing, healthy skin" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -123,12 +111,10 @@ const SkinClinic = () => {
                 Common concerns include:
               </h3>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {concerns.map((concern, index) => (
-                  <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-accent/50">
+                {concerns.map((concern, index) => <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-accent/50">
                     <CheckCircle size={20} className="text-primary flex-shrink-0" />
                     <span className="text-foreground">{concern}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -149,8 +135,7 @@ const SkinClinic = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {steps.map((step, index) => (
-                <div key={index} className="relative">
+              {steps.map((step, index) => <div key={index} className="relative">
                   <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold z-10">
                     {step.number}
                   </div>
@@ -161,8 +146,7 @@ const SkinClinic = () => {
                     <h3 className="font-serif text-lg font-semibold text-foreground mb-2">{step.title}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -179,14 +163,12 @@ const SkinClinic = () => {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="card-luxury p-6 text-center">
+              {benefits.map((benefit, index) => <div key={index} className="card-luxury p-6 text-center">
                   <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mx-auto mb-4">
                     <benefit.icon size={24} className="text-primary" />
                   </div>
                   <h3 className="font-medium text-foreground">{benefit.title}</h3>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -206,9 +188,7 @@ const SkinClinic = () => {
               {/* Review 1 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "Finally someone who actually listened to my skin concerns instead of just trying to sell me stuff."
@@ -219,9 +199,7 @@ const SkinClinic = () => {
               {/* Review 2 - Medium */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "I've wasted so much money on products that didn't work for my skin. After one consultation I finally understand what my skin actually needs. My routine is simpler now and my skin looks way better — wish I'd done this years ago!"
@@ -232,9 +210,7 @@ const SkinClinic = () => {
               {/* Review 3 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "Super informative. Left with a proper plan, not just vague advice. 10/10 would recommend."
@@ -245,9 +221,7 @@ const SkinClinic = () => {
               {/* Review 4 - Long */}
               <div className="card-luxury p-6 md:col-span-2">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "I came in feeling completely overwhelmed — I had about 15 products in my bathroom and no idea what order to use them in or if they even worked together. The consultation was so thorough. We went through everything, talked about my skin type, what ingredients I should focus on, and what I could cut out. It wasn't about buying new things — it was about actually understanding my skin. Best £20 I've spent in ages."
@@ -258,9 +232,7 @@ const SkinClinic = () => {
               {/* Review 5 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-primary fill-primary" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-primary fill-primary" />)}
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   "Calm, professional, zero pressure. Exactly what I needed. ✨"
@@ -269,9 +241,7 @@ const SkinClinic = () => {
               </div>
             </div>
 
-            <p className="text-xs text-center text-muted-foreground mt-8">
-              Reviews shown are placeholder examples. Real client testimonials coming soon.
-            </p>
+            
           </div>
         </div>
       </section>
@@ -306,8 +276,6 @@ const SkinClinic = () => {
           </div>
         </div>
       </section>
-    </>
-  );
+    </>;
 };
-
 export default SkinClinic;
