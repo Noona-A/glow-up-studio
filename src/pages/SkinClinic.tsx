@@ -198,46 +198,80 @@ const SkinClinic = () => {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
-                What Our Clients Say
+                What our clients say
               </h2>
-              <div className="flex justify-center gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={24} className="text-primary fill-primary" />
-                ))}
-              </div>
+              <p className="text-muted-foreground">Real feedback from real skin journeys</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
+              {/* Review 1 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} className="text-primary fill-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed italic">
-                  "I booked a skin consultation because I was confused by all the products I was using. The consultation helped me understand my skin properly for the first time. The advice felt realistic and tailored to me rather than being pushed to buy lots of products."
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "Finally someone who actually listened to my skin concerns instead of just trying to sell me stuff."
                 </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Emma, acne consultation</p>
               </div>
+
+              {/* Review 2 - Medium */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} className="text-primary fill-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed italic">
-                  "Since my consultation my skin has genuinely improved. I finally understand what ingredients work for me and why. It felt very personal and informative and I left feeling confident about my routine instead of overwhelmed."
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "I've wasted so much money on products that didn't work for my skin. After one consultation I finally understand what my skin actually needs. My routine is simpler now and my skin looks way better — wish I'd done this years ago!"
                 </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Nadia, sensitive skin</p>
               </div>
+
+              {/* Review 3 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} className="text-primary fill-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed italic">
-                  "The whole experience was really calming and reassuring. It felt like a proper skin health consultation rather than a sales appointment. I felt listened to and supported and I would definitely recommend it to anyone unsure about their skin."
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "Super informative. Left with a proper plan, not just vague advice. 10/10 would recommend."
                 </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Chloe, pigmentation</p>
+              </div>
+
+              {/* Review 4 - Long */}
+              <div className="card-luxury p-6 md:col-span-2">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "I came in feeling completely overwhelmed — I had about 15 products in my bathroom and no idea what order to use them in or if they even worked together. The consultation was so thorough. We went through everything, talked about my skin type, what ingredients I should focus on, and what I could cut out. It wasn't about buying new things — it was about actually understanding my skin. Best £20 I've spent in ages."
+                </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Zara, routine overhaul</p>
+              </div>
+
+              {/* Review 5 - Short */}
+              <div className="card-luxury p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "Calm, professional, zero pressure. Exactly what I needed. ✨"
+                </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Lily, first consultation</p>
               </div>
             </div>
+
+            <p className="text-xs text-center text-muted-foreground mt-8">
+              Reviews shown are placeholder examples. Real client testimonials coming soon.
+            </p>
           </div>
         </div>
       </section>
