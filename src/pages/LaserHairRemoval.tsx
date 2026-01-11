@@ -38,8 +38,8 @@ const idealCandidates = [
     reason: "The laser targets melanin (pigment) in the hair follicle — darker hair absorbs energy more effectively for better results"
   },
   {
-    condition: "All skin types (Fitzpatrick I–VI)",
-    reason: "Our 808nm diode laser with 4 wavelengths can safely treat all skin tones, including darker complexions"
+    condition: "Skin types I–V (fair to dark brown skin)",
+    reason: "Our 808nm diode laser with 4 wavelengths is clinically proven safe for Fitzpatrick types I–V with integrated cooling technology"
   },
   {
     condition: "Coarse or thick hair",
@@ -65,6 +65,10 @@ const idealCandidates = [
 
 // Orange section - Proceed with care (merged caution + less effective)
 const proceedWithCare = [
+  {
+    condition: "Very dark skin (Fitzpatrick type VI)",
+    reason: "Our 808nm diode laser is optimised for types I–V. For type VI skin, alternative wavelengths (e.g. Nd:YAG 1064nm) may be safer — we'll discuss options during your consultation"
+  },
   {
     condition: "White, grey, red, or very light blonde hair",
     reason: "These hair colours lack sufficient melanin for the laser to target effectively — results may be limited"
@@ -346,7 +350,7 @@ const LaserHairRemoval = () => {
                 Is laser hair removal right for you?
               </h2>
               <p className="text-muted-foreground">
-                While laser is suitable for most skin types (Fitzpatrick I-VI), some conditions require extra care or may mean treatment isn't recommended.
+                Our 808nm diode laser is suitable for most skin types (Fitzpatrick I–V). Some conditions require extra care or may mean treatment isn't recommended.
               </p>
             </div>
 
