@@ -31,72 +31,87 @@ const safetyPoints = ["Medical-grade laser equipment", "Treatments delivered by 
 const beforeTreatment = ["Shave the area 12–24 hours before your appointment — surface hair can absorb laser energy; shaving keeps the follicle intact", "Avoid waxing, plucking, or epilation for 4–6 weeks before treatment — these remove the structure the laser targets", "Avoid sun exposure, self-tan, and sunbeds for at least 2–4 weeks — tanned skin increases burn and pigmentation risk", "Stop retinoids, exfoliants, and acids 3–7 days prior if advised — these increase skin sensitivity", "Arrive with clean, product-free skin — no lotions, oils, make-up, deodorants or moisturisers on the treatment area", "Discuss any medications or skin conditions with your therapist to rule out photosensitising effects"];
 const afterTreatment = ["Avoid direct UV exposure and tanning beds for 2–4 weeks — apply SPF50+ daily to treated areas", "Avoid heat, saunas, steam rooms, and strenuous exercise for 48–72 hours to prevent inflammation", "Keep the area gentle — avoid tight clothing, scrubs, and fragranced products for 48–72 hours", "Do not shave for at least 48–72 hours — plucking or waxing remains contraindicated throughout your course", "Apply light cooling compresses or a soothing gel to reduce redness and discomfort"];
 const bestPractices = ["Follow your personalised schedule — typically 4–8 weeks apart — to catch hairs in successive growth cycles", "Shave consistently prior to each session for optimal laser penetration", "Protect treated skin from UV daily to avoid pigmentation changes and support uniform results", "Maintain hydration and gentle skincare between treatment days", "Avoid smoking and excessive alcohol around treatments — these can affect circulation and healing"];
-const whoShouldBeCautious = [{
-  condition: "Diabetes",
-  reason: "Slower healing times may increase infection risk"
-}, {
-  condition: "History of cold sores (herpes simplex)",
-  reason: "Laser can trigger an outbreak — antiviral medication may be required beforehand"
-}, {
-  condition: "PCOS or hormonal imbalances",
-  reason: "May require more sessions and maintenance as results can be less predictable"
-}, {
-  condition: "Moles or tattoos in treatment area",
-  reason: "Laser must avoid these areas with a 5mm–2cm perimeter"
-}];
-const whoShouldAvoid = [{
-  condition: "Active skin infections",
-  reason: "Cold sores, impetigo, fungal infections, eczema or psoriasis in the treatment area"
-}, {
-  condition: "Recent sun exposure or fake tan",
-  reason: "Wait at least 4–6 weeks (natural/UV) or 10 days (fake tan) to reduce burn risk"
-}, {
-  condition: "Roaccutane (isotretinoin) users",
-  reason: "Must wait at least 6 months after finishing oral retinoids"
-}, {
-  condition: "Pregnancy or breastfeeding",
-  reason: "Avoided due to hormonal changes affecting results and lack of safety data"
-}, {
-  condition: "History of keloid scarring",
-  reason: "High risk of permanent scarring"
-}, {
-  condition: "Photosensitising medications",
-  reason: "Certain drugs (e.g., St John's Wort, some antibiotics) increase light sensitivity"
-}];
+// Green section - Ideal candidates & conditions treated
 const idealCandidates = [
   {
-    condition: "Dark hair on lighter skin (Fitzpatrick I–III)",
-    reason: "Optimal contrast between hair melanin and skin pigment allows the laser to target follicles most effectively"
+    condition: "Dark hair (black or brown) on any skin tone",
+    reason: "The laser targets melanin (pigment) in the hair follicle — darker hair absorbs energy more effectively for better results"
   },
   {
-    condition: "Black or brown hair",
-    reason: "Contains sufficient melanin for the laser to absorb and destroy the hair follicle"
-  },
-  {
-    condition: "Darker skin tones (Fitzpatrick IV–VI)",
-    reason: "Suitable with Nd:YAG (1064nm) laser technology, which safely bypasses surface melanin"
+    condition: "All skin types (Fitzpatrick I–VI)",
+    reason: "Modern Nd:YAG laser technology can safely treat darker skin tones by bypassing surface pigment"
   },
   {
     condition: "Coarse or thick hair",
-    reason: "Responds better than fine hair due to higher melanin concentration in the follicle"
+    reason: "Thicker hairs contain more melanin, making them easier for the laser to target and destroy"
   },
   {
-    condition: "Consistent hair growth cycle",
-    reason: "Regular growth patterns allow for optimal timing of treatment sessions"
+    condition: "PCOS (Polycystic Ovary Syndrome)",
+    reason: "NHS-recommended treatment for managing facial and body hair caused by hormonal imbalances — often covered by some NHS trusts"
+  },
+  {
+    condition: "Hirsutism",
+    reason: "Clinically indicated for women with excess hair growth in typically male-pattern areas (face, chest, back)"
+  },
+  {
+    condition: "Pilonidal sinus (post-surgery)",
+    reason: "Often NHS-funded to reduce hair regrowth and lower the risk of recurrence after surgery"
   }
 ];
-const notIdealFor = [
+
+// Orange section - Proceed with care (merged caution + less effective)
+const proceedWithCare = [
   {
-    condition: "White, grey, or very light blonde hair",
-    reason: "Lacks sufficient melanin pigment for the laser to target"
+    condition: "White, grey, red, or very light blonde hair",
+    reason: "These hair colours lack sufficient melanin for the laser to target effectively — results may be limited"
   },
   {
-    condition: "Red hair",
-    reason: "Contains pheomelanin rather than eumelanin, which absorbs laser energy less effectively"
+    condition: "Very fine or 'peach fuzz' hair",
+    reason: "Minimal pigment in fine vellus hair means the laser may not produce noticeable reduction"
   },
   {
-    condition: "Very fine or vellus hair",
-    reason: "May not respond as well due to minimal pigment in the hair shaft"
+    condition: "PCOS or hormonal conditions",
+    reason: "While treatment works well, you may need additional sessions and ongoing maintenance as hormones can stimulate new growth"
+  },
+  {
+    condition: "History of cold sores (herpes simplex)",
+    reason: "Laser energy near the mouth can trigger an outbreak — we may prescribe antiviral medication beforehand"
+  },
+  {
+    condition: "Diabetes",
+    reason: "Slower wound healing may increase infection risk — extra aftercare precautions apply"
+  },
+  {
+    condition: "Moles, freckles, or tattoos in the treatment area",
+    reason: "The laser must avoid these with a safe perimeter to prevent burns or pigment changes"
+  }
+];
+
+// Red section - Not recommended (contraindications)
+const notRecommended = [
+  {
+    condition: "Active skin infections in the treatment area",
+    reason: "Including cold sores, impetigo, shingles, eczema, or psoriasis flare-ups — treatment must wait until healed"
+  },
+  {
+    condition: "Recent sun exposure or fake tan",
+    reason: "Wait 4–6 weeks after sun/sunbed exposure, or 10+ days after self-tan — tanned skin significantly increases burn risk"
+  },
+  {
+    condition: "Roaccutane (isotretinoin) use",
+    reason: "Must wait at least 6 months after stopping — this medication thins the skin and increases sensitivity"
+  },
+  {
+    condition: "Pregnancy or breastfeeding",
+    reason: "Not recommended due to hormonal changes affecting results and limited safety data — we advise waiting"
+  },
+  {
+    condition: "History of keloid scarring",
+    reason: "High risk of abnormal scar formation — laser treatment is not advised"
+  },
+  {
+    condition: "Photosensitising medications",
+    reason: "Certain drugs (e.g., some antibiotics, St John's Wort) increase light sensitivity and burn risk"
   }
 ];
 // Treatment Guide Section Component with tabs
@@ -331,83 +346,69 @@ const LaserHairRemoval = () => {
               </p>
             </div>
 
-            {/* Ideal Candidate - Green */}
+            {/* Green - Ideal Candidates & Conditions Treated */}
             <div className="card-luxury p-8 mb-6 border-l-4 border-l-green-500">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <CheckCircle className="w-5 h-5 text-green-600" />
-                <h3 className="font-serif text-xl">Ideal candidate</h3>
+                <h3 className="font-serif text-xl">Ideal candidates & conditions treated</h3>
               </div>
               <p className="text-muted-foreground mb-6 text-sm">
-                Based on BMLA and NHS clinical guidance, laser hair removal works best for the following profiles.
+                Laser hair removal is clinically recommended for the following — based on NICE, NHS, and BMLA guidance.
               </p>
               <ul className="space-y-4">
-                {idealCandidates.map((item, index) => <li key={index} className="flex items-start gap-3">
+                {idealCandidates.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium text-foreground">{item.condition}</span>
                       <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
                     </div>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Not Ideal - Light orange/peach */}
-            <div className="card-luxury p-8 mb-6 border-l-4 border-l-orange-300">
-              <div className="flex items-center gap-3 mb-6">
-                <Info className="w-5 h-5 text-orange-400" />
-                <h3 className="font-serif text-xl">Less effective for</h3>
-              </div>
-              <p className="text-muted-foreground mb-6 text-sm">
-                Laser technology requires melanin to target the hair follicle. The following hair types may see limited results.
-              </p>
-              <ul className="space-y-4">
-                {notIdealFor.map((item, index) => <li key={index} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-orange-300 mt-2 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-foreground">{item.condition}</span>
-                      <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
-                    </div>
-                  </li>)}
-              </ul>
-            </div>
-
-            {/* Who Should Be Cautious */}
+            {/* Orange - Proceed With Care */}
             <div className="card-luxury p-8 mb-6 border-l-4 border-l-amber-500">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="w-5 h-5 text-amber-600" />
-                <h3 className="font-serif text-xl">Proceed with caution</h3>
+                <h3 className="font-serif text-xl">Proceed with care</h3>
               </div>
               <p className="text-muted-foreground mb-6 text-sm">
-                If any of the following apply, please discuss with your therapist during your consultation or patch test.
+                Treatment is still possible in many cases, but results may vary or extra precautions are needed. We'll discuss this during your consultation.
               </p>
               <ul className="space-y-4">
-                {whoShouldBeCautious.map((item, index) => <li key={index} className="flex items-start gap-3">
+                {proceedWithCare.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium text-foreground">{item.condition}</span>
                       <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
                     </div>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Who Should Avoid */}
-            <div className="card-luxury p-8 mb-6 border-l-4 border-l-red-400">
-              <div className="flex items-center gap-3 mb-6">
+            {/* Red - Not Recommended */}
+            <div className="card-luxury p-8 mb-6 border-l-4 border-l-red-500">
+              <div className="flex items-center gap-3 mb-4">
                 <XCircle className="w-5 h-5 text-red-500" />
-                <h3 className="font-serif text-xl">Treatment not recommended</h3>
+                <h3 className="font-serif text-xl">Not recommended</h3>
               </div>
               <p className="text-muted-foreground mb-6 text-sm">
-                According to UK clinical guidelines (BMLA, NHS), the following are contraindications for laser hair removal.
+                According to UK clinical guidelines, treatment should be postponed or avoided entirely in these situations.
               </p>
               <ul className="space-y-4">
-                {whoShouldAvoid.map((item, index) => <li key={index} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
+                {notRecommended.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium text-foreground">{item.condition}</span>
                       <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
                     </div>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -416,7 +417,7 @@ const LaserHairRemoval = () => {
               <div className="flex items-start gap-3">
                 <Info className="w-5 h-5 text-primary/70 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  This information is based on guidance from the British Medical Laser Association (BMLA) and NHS. It is provided for educational purposes and does not replace a personalised assessment. All clients receive a full consultation and patch test before treatment.
+                  This guidance is based on the British Medical Laser Association (BMLA), NICE, and NHS recommendations. It is for educational purposes only and does not replace a personalised consultation. Every client receives a full assessment and patch test before treatment.
                 </p>
               </div>
             </div>
