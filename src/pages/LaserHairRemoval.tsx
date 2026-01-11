@@ -3,6 +3,8 @@ import { ClipboardCheck, Zap, Calendar, RefreshCw, Check, Shield, ShieldCheck, A
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import laserHeroImg from "@/assets/laser-hero.jpg";
+import laserResult1 from "@/assets/laser-result-1.jpg";
+import laserResult2 from "@/assets/laser-result-2.jpg";
 
 const steps = [
   { 
@@ -382,52 +384,114 @@ const LaserHairRemoval = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Results & Reviews */}
       <section className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
-                What Our Clients Say
+                Real results, real reviews
               </h2>
-              <div className="flex justify-center gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={24} className="text-primary fill-primary" />
-                ))}
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                See what our clients are saying about their laser hair removal journey
+              </p>
+            </div>
+
+            {/* Results Gallery */}
+            <div className="grid sm:grid-cols-2 gap-6 mb-14">
+              <div className="card-luxury p-4 overflow-hidden">
+                <div className="aspect-square rounded-lg overflow-hidden mb-4">
+                  <img 
+                    src={laserResult1} 
+                    alt="Smooth underarm result after laser treatment"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground text-center">Underarm — after 6 sessions</p>
+              </div>
+              <div className="card-luxury p-4 overflow-hidden">
+                <div className="aspect-square rounded-lg overflow-hidden mb-4">
+                  <img 
+                    src={laserResult2} 
+                    alt="Smooth leg result after laser treatment"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground text-center">Full leg — after 8 sessions</p>
               </div>
             </div>
+
+            {/* Reviews */}
             <div className="grid md:grid-cols-3 gap-6">
+              {/* Review 1 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} className="text-primary fill-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed italic">
-                  "I love the new space. It feels like such a big step up from the previous clinic and you can really tell how much care has gone into it. The environment is calm and professional and the treatment itself was explained clearly and done with so much care. I felt very comfortable throughout."
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "Honestly didn't think it would work for me but after 4 sessions I barely have any regrowth. So happy I finally did it!"
                 </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Sarah, underarm treatment</p>
               </div>
+
+              {/* Review 2 - Medium */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} className="text-primary fill-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed italic">
-                  "I was quite nervous before my first laser session but I was put at ease straight away. Everything was explained in a way that made sense and I never felt rushed. The results so far have been better than I expected and I feel much more confident already."
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "Was really nervous about my first session (I'm a total wimp with pain lol) but it was completely fine. The cooling gel helps loads. Already seeing less hair after just 2 appointments. The clinic is lovely too — feels proper professional, not like those high street places."
                 </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Priya, bikini line</p>
               </div>
+
+              {/* Review 3 - Short */}
               <div className="card-luxury p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} className="text-primary fill-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed italic">
-                  "The clinic is clean, welcoming and really well organised. Booking was easy and the appointment ran on time. I appreciated how honest and knowledgeable the practitioner was and how much attention was paid to safety and comfort."
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "Best money I've spent. No more razor burn or ingrown hairs. Game changer."
                 </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Amina, full legs</p>
+              </div>
+
+              {/* Review 4 - Long */}
+              <div className="card-luxury p-6 md:col-span-2">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "I've been wanting to do laser for years but kept putting it off because I wasn't sure if it would work on my skin tone (I'm South Asian). Had a really thorough consultation where everything was explained properly — the patch test, what to expect, aftercare, all of it. I'm now 5 sessions in and the difference is incredible. Wish I'd done it sooner! The team are so knowledgeable and never make you feel rushed."
+                </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Fatima, underarms & Brazilian</p>
+              </div>
+
+              {/* Review 5 - Short */}
+              <div className="card-luxury p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  "Quick, easy, actually works. What more can you ask for? 👌"
+                </p>
+                <p className="text-xs text-muted-foreground/70 mt-4">— Jade, lip & chin</p>
               </div>
             </div>
+
+            <p className="text-xs text-center text-muted-foreground mt-8">
+              Reviews shown are placeholder examples. Real client testimonials coming soon.
+            </p>
           </div>
         </div>
       </section>
