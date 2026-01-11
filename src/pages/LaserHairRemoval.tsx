@@ -63,6 +63,42 @@ const whoShouldAvoid = [{
   condition: "Photosensitising medications",
   reason: "Certain drugs (e.g., St John's Wort, some antibiotics) increase light sensitivity"
 }];
+const idealCandidates = [
+  {
+    condition: "Dark hair on lighter skin (Fitzpatrick I–III)",
+    reason: "Optimal contrast between hair melanin and skin pigment allows the laser to target follicles most effectively"
+  },
+  {
+    condition: "Black or brown hair",
+    reason: "Contains sufficient melanin for the laser to absorb and destroy the hair follicle"
+  },
+  {
+    condition: "Darker skin tones (Fitzpatrick IV–VI)",
+    reason: "Suitable with Nd:YAG (1064nm) laser technology, which safely bypasses surface melanin"
+  },
+  {
+    condition: "Coarse or thick hair",
+    reason: "Responds better than fine hair due to higher melanin concentration in the follicle"
+  },
+  {
+    condition: "Consistent hair growth cycle",
+    reason: "Regular growth patterns allow for optimal timing of treatment sessions"
+  }
+];
+const notIdealFor = [
+  {
+    condition: "White, grey, or very light blonde hair",
+    reason: "Lacks sufficient melanin pigment for the laser to target"
+  },
+  {
+    condition: "Red hair",
+    reason: "Contains pheomelanin rather than eumelanin, which absorbs laser energy less effectively"
+  },
+  {
+    condition: "Very fine or vellus hair",
+    reason: "May not respond as well due to minimal pigment in the hair shaft"
+  }
+];
 // Treatment Guide Section Component with tabs
 const TreatmentGuideSection = ({ 
   beforeTreatment, 
@@ -293,6 +329,46 @@ const LaserHairRemoval = () => {
               <p className="text-muted-foreground">
                 While laser is suitable for most skin types (Fitzpatrick I-VI), some conditions require extra care or may mean treatment isn't recommended.
               </p>
+            </div>
+
+            {/* Ideal Candidate - Green */}
+            <div className="card-luxury p-8 mb-6 border-l-4 border-l-green-500">
+              <div className="flex items-center gap-3 mb-6">
+                <CheckCircle className="w-5 h-5 text-green-600" />
+                <h3 className="font-serif text-xl">Ideal candidate</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm">
+                Based on BMLA and NHS clinical guidance, laser hair removal works best for the following profiles.
+              </p>
+              <ul className="space-y-4">
+                {idealCandidates.map((item, index) => <li key={index} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-foreground">{item.condition}</span>
+                      <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
+                    </div>
+                  </li>)}
+              </ul>
+            </div>
+
+            {/* Not Ideal - Light orange/peach */}
+            <div className="card-luxury p-8 mb-6 border-l-4 border-l-orange-300">
+              <div className="flex items-center gap-3 mb-6">
+                <Info className="w-5 h-5 text-orange-400" />
+                <h3 className="font-serif text-xl">Less effective for</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm">
+                Laser technology requires melanin to target the hair follicle. The following hair types may see limited results.
+              </p>
+              <ul className="space-y-4">
+                {notIdealFor.map((item, index) => <li key={index} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-300 mt-2 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-foreground">{item.condition}</span>
+                      <p className="text-muted-foreground text-sm mt-1">{item.reason}</p>
+                    </div>
+                  </li>)}
+              </ul>
             </div>
 
             {/* Who Should Be Cautious */}
