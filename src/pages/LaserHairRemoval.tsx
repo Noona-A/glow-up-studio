@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ClipboardCheck, Zap, Calendar, RefreshCw, Check, Shield, ShieldCheck, ArrowRight, Sparkles, Star, Sun, Droplets, AlertTriangle, XCircle, CheckCircle, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -62,6 +63,112 @@ const whoShouldAvoid = [{
   condition: "Photosensitising medications",
   reason: "Certain drugs (e.g., St John's Wort, some antibiotics) increase light sensitivity"
 }];
+// Treatment Guide Section Component with tabs
+const TreatmentGuideSection = ({ 
+  beforeTreatment, 
+  afterTreatment, 
+  bestPractices 
+}: { 
+  beforeTreatment: string[]; 
+  afterTreatment: string[]; 
+  bestPractices: string[];
+}) => {
+  const [activeTab, setActiveTab] = useState<'before' | 'after' | 'best'>('before');
+
+  const tabs = [
+    { id: 'before' as const, label: 'Before', icon: ClipboardCheck },
+    { id: 'after' as const, label: 'After', icon: Sun },
+    { id: 'best' as const, label: 'Best Results', icon: Sparkles },
+  ];
+
+  const content = {
+    before: {
+      title: 'Before your treatment',
+      description: 'Preparing your skin correctly sets the foundation for both safety and effectiveness — allowing the laser energy to reach the hair follicle efficiently while minimising irritation.',
+      items: beforeTreatment,
+      icon: Check,
+    },
+    after: {
+      title: 'After your treatment',
+      description: 'Post-treatment aftercare is essential to allow controlled healing, prevent complications, and protect skin while it\'s most vulnerable.',
+      items: afterTreatment,
+      icon: Check,
+    },
+    best: {
+      title: 'For best results',
+      description: 'Laser hair removal works by targeting hair in its active growth (anagen) phase — not all hairs are in this phase at once, so multiple sessions are required.',
+      items: bestPractices,
+      icon: Sparkles,
+    },
+  };
+
+  const currentContent = content[activeTab];
+  const IconComponent = currentContent.icon;
+
+  return (
+    <section className="py-12 md:py-16 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-2 bg-accent rounded-full text-sm mb-4">
+              Treatment Guide
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
+              Prepare for the best results
+            </h2>
+            <p className="text-muted-foreground">
+              Following these guidelines ensures both safety and effectiveness of your laser hair removal course.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-[200px_1fr] gap-6">
+            {/* Tab Buttons - Vertical on desktop, horizontal on mobile */}
+            <div className="flex md:flex-col gap-2">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-200 flex-1 md:flex-none ${
+                    activeTab === tab.id
+                      ? 'bg-primary text-white shadow-md'
+                      : 'bg-card hover:bg-accent text-foreground border border-border'
+                  }`}
+                >
+                  <tab.icon className={`w-5 h-5 flex-shrink-0 ${activeTab === tab.id ? 'text-white' : 'text-primary'}`} />
+                  <span className="font-medium text-sm md:text-base">{tab.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Content Area */}
+            <div className="card-luxury p-6 md:p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  {activeTab === 'before' && <ClipboardCheck className="w-5 h-5 text-primary" />}
+                  {activeTab === 'after' && <Sun className="w-5 h-5 text-primary" />}
+                  {activeTab === 'best' && <Sparkles className="w-5 h-5 text-primary" />}
+                </div>
+                <h3 className="font-serif text-xl">{currentContent.title}</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 text-sm">
+                {currentContent.description}
+              </p>
+              <ul className="space-y-3">
+                {currentContent.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <IconComponent className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-muted-foreground text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const LaserHairRemoval = () => {
   const structuredData = {
     "@context": "https://schema.org",
@@ -169,80 +276,11 @@ const LaserHairRemoval = () => {
       </section>
 
       {/* Treatment Guide Section */}
-      <section className="py-12 md:py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-14">
-              <span className="inline-block px-4 py-2 bg-accent rounded-full text-sm mb-4">
-                Treatment Guide
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
-                Prepare for the best results
-              </h2>
-              <p className="text-muted-foreground">
-                Following these guidelines ensures both safety and effectiveness of your laser hair removal course.
-              </p>
-            </div>
-
-            {/* Before Treatment Card */}
-            <div className="card-luxury p-8 mb-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <ClipboardCheck className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-serif text-xl">Before your treatment</h3>
-              </div>
-              <p className="text-muted-foreground mb-6 text-sm">
-                Preparing your skin correctly sets the foundation for both safety and effectiveness — allowing the laser energy to reach the hair follicle efficiently while minimising irritation.
-              </p>
-              <ul className="space-y-3">
-                {beforeTreatment.map((item, index) => <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground text-sm">{item}</span>
-                  </li>)}
-              </ul>
-            </div>
-
-            {/* After Treatment Card */}
-            <div className="card-luxury p-8 mb-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Sun className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-serif text-xl">After your treatment</h3>
-              </div>
-              <p className="text-muted-foreground mb-6 text-sm">
-                Post-treatment aftercare is essential to allow controlled healing, prevent complications, and protect skin while it's most vulnerable.
-              </p>
-              <ul className="space-y-3">
-                {afterTreatment.map((item, index) => <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground text-sm">{item}</span>
-                  </li>)}
-              </ul>
-            </div>
-
-            {/* Best Results Card */}
-            <div className="card-luxury p-8 mb-6 bg-gradient-to-br from-secondary/5 to-primary/5">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-serif text-xl">For best results</h3>
-              </div>
-              <p className="text-muted-foreground mb-6 text-sm">
-                Laser hair removal works by targeting hair in its active growth (anagen) phase — not all hairs are in this phase at once, so multiple sessions are required.
-              </p>
-              <ul className="space-y-3">
-                {bestPractices.map((item, index) => <li key={index} className="flex items-start gap-3">
-                    <Sparkles className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground text-sm">{item}</span>
-                  </li>)}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TreatmentGuideSection 
+        beforeTreatment={beforeTreatment}
+        afterTreatment={afterTreatment}
+        bestPractices={bestPractices}
+      />
 
       {/* Suitability Section */}
       <section className="py-12 md:py-16 bg-section-gradient">
