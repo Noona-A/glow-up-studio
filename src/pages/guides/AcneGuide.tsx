@@ -1254,9 +1254,9 @@ const AcneGuide = () => {
                 <p className="text-muted-foreground text-sm max-w-xl mx-auto">Select a topic below to learn more.</p>
               </div>
 
-              <div className="grid md:grid-cols-[220px_1fr] gap-6">
+              <div className="grid md:grid-cols-[220px_1fr] gap-6 items-start">
                 {/* Tab Buttons - Vertical on desktop, horizontal scroll on mobile */}
-                <div className="flex md:flex-col gap-1 overflow-x-auto md:overflow-visible pb-2 md:pb-0 scrollbar-hide">
+                <div className="flex md:flex-col gap-1 overflow-x-auto md:overflow-visible pb-2 md:pb-0 scrollbar-hide md:h-fit">
                   {sections.map(section => {
                   const Icon = section.icon;
                   return <button key={section.id} onClick={() => setActiveSection(section.id)} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-left transition-all duration-200 flex-shrink-0 md:flex-shrink ${activeSection === section.id ? 'bg-primary text-white shadow-md' : 'bg-card hover:bg-accent text-foreground border border-border'}`}>
@@ -1266,10 +1266,10 @@ const AcneGuide = () => {
                 })}
                 </div>
 
-                {/* Content Area */}
+                {/* Content Area - matches nav height */}
                 <div 
                   ref={contentRef}
-                  className="card-luxury p-6 md:p-8 max-h-[70vh] overflow-y-auto"
+                  className="card-luxury p-6 md:p-8 md:h-[calc(18*2.5rem)] overflow-y-auto"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
