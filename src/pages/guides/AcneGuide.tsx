@@ -1153,9 +1153,7 @@ const AcneGuide = () => {
                 <h2 className="font-serif text-2xl md:text-3xl font-medium text-foreground mb-3">
                   Everything you need to know
                 </h2>
-                <p className="text-muted-foreground text-sm max-w-xl mx-auto">
-                  Select a topic below to learn more. All information follows UK clinical guidelines.
-                </p>
+                <p className="text-muted-foreground text-sm max-w-xl mx-auto">Select a topic below to learn more.</p>
               </div>
 
               <div className="grid md:grid-cols-[240px_1fr] gap-6">
