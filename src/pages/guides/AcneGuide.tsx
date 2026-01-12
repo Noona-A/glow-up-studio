@@ -77,71 +77,80 @@ const sections = [{
   icon: Timer
 }];
 
-// Section content components - compact to fit without scrolling
-const UnderstandingContent = () => <div className="space-y-3">
+// Section content components
+const UnderstandingContent = () => <div className="space-y-6">
     <div>
-      <h3 className="font-semibold text-sm text-foreground mb-2">What Causes Acne?</h3>
-      <div className="grid grid-cols-2 gap-2">
-        <div className="bg-lavender-light/50 border-l-2 border-purple rounded-r p-2">
-          <span className="font-medium text-foreground text-xs">Excess oil</span>
-          <span className="text-[10px] text-muted-foreground ml-1">— often hormonal</span>
+      <h3 className="font-semibold text-lg text-foreground mb-3">What Causes Acne?</h3>
+      <p className="text-muted-foreground mb-4 text-sm">
+        Acne develops when four key factors come together:
+      </p>
+      <div className="grid sm:grid-cols-2 gap-3">
+        <div className="bg-lavender-light/50 border-l-4 border-purple rounded-r-lg p-3">
+          <h4 className="font-medium text-foreground text-sm mb-1">Excess oil production</h4>
+          <p className="text-xs text-muted-foreground">Your skin produces too much oil, often triggered by hormones</p>
         </div>
-        <div className="bg-lavender-light/50 border-l-2 border-purple-light rounded-r p-2">
-          <span className="font-medium text-foreground text-xs">Blocked pores</span>
-          <span className="text-[10px] text-muted-foreground ml-1">— dead skin buildup</span>
+        <div className="bg-lavender-light/50 border-l-4 border-purple-light rounded-r-lg p-3">
+          <h4 className="font-medium text-foreground text-sm mb-1">Blocked pores</h4>
+          <p className="text-xs text-muted-foreground">Dead skin cells don't shed properly and clog pores</p>
         </div>
-        <div className="bg-lavender-light/50 border-l-2 border-lavender-glow rounded-r p-2">
-          <span className="font-medium text-foreground text-xs">Bacteria</span>
-          <span className="text-[10px] text-muted-foreground ml-1">— multiplies in pores</span>
+        <div className="bg-lavender-light/50 border-l-4 border-lavender-glow rounded-r-lg p-3">
+          <h4 className="font-medium text-foreground text-sm mb-1">Bacteria</h4>
+          <p className="text-xs text-muted-foreground">Bacteria multiply in clogged pores, causing inflammation</p>
         </div>
-        <div className="bg-blush/30 border-l-2 border-pink-300 rounded-r p-2">
-          <span className="font-medium text-foreground text-xs">Inflammation</span>
-          <span className="text-[10px] text-muted-foreground ml-1">— immune response</span>
-        </div>
-      </div>
-    </div>
-
-    <div className="grid grid-cols-2 gap-3">
-      <div>
-        <h4 className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide mb-1">Non-Inflammatory</h4>
-        <div className="space-y-1">
-          <div className="bg-muted/50 rounded p-1.5 flex items-center gap-1">
-            <span className="bg-purple/15 text-purple-deep text-[10px] font-medium px-1.5 py-0.5 rounded-full">Blackheads</span>
-            <span className="text-[10px] text-muted-foreground">Open, dark pores</span>
-          </div>
-          <div className="bg-muted/50 rounded p-1.5 flex items-center gap-1">
-            <span className="bg-purple/15 text-purple-deep text-[10px] font-medium px-1.5 py-0.5 rounded-full">Whiteheads</span>
-            <span className="text-[10px] text-muted-foreground">Closed white bumps</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h4 className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide mb-1">Inflammatory</h4>
-        <div className="space-y-1">
-          <div className="bg-blush/30 rounded p-1.5 flex items-center gap-1">
-            <span className="bg-pink-100 text-pink-700 text-[10px] font-medium px-1.5 py-0.5 rounded-full">Papules</span>
-            <span className="text-[10px] text-muted-foreground">Red bumps, no pus</span>
-          </div>
-          <div className="bg-blush/30 rounded p-1.5 flex items-center gap-1">
-            <span className="bg-pink-100 text-pink-700 text-[10px] font-medium px-1.5 py-0.5 rounded-full">Pustules</span>
-            <span className="text-[10px] text-muted-foreground">White/yellow centre</span>
-          </div>
-          <div className="bg-blush/30 rounded p-1.5 flex items-center gap-1">
-            <span className="bg-pink-200 text-pink-800 text-[10px] font-medium px-1.5 py-0.5 rounded-full">Nodules/Cysts</span>
-            <span className="text-[10px] text-muted-foreground">Deep, painful</span>
-          </div>
+        <div className="bg-blush/30 border-l-4 border-pink-300 rounded-r-lg p-3">
+          <h4 className="font-medium text-foreground text-sm mb-1">Inflammation</h4>
+          <p className="text-xs text-muted-foreground">Your body's immune response creates redness and swelling</p>
         </div>
       </div>
     </div>
 
-    <div className="grid grid-cols-2 gap-2">
-      <div className="bg-green-50/80 border border-green-200 rounded-lg p-2">
-        <h4 className="font-semibold text-green-800 text-xs">Mild-Moderate</h4>
-        <p className="text-[10px] text-green-700">Blackheads/whiteheads, up to 34 bumps. OTC treatments often work.</p>
+    <div>
+      <h3 className="font-semibold text-lg text-foreground mb-3">Types of Acne</h3>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Non-Inflammatory</h4>
+          <div className="space-y-2">
+            <div className="bg-muted/50 rounded-lg p-2 flex items-center gap-2">
+              <span className="bg-purple/15 text-purple-deep text-xs font-medium px-2 py-0.5 rounded-full">Blackheads</span>
+              <p className="text-xs text-muted-foreground">Open pores that look dark due to oxidation</p>
+            </div>
+            <div className="bg-muted/50 rounded-lg p-2 flex items-center gap-2">
+              <span className="bg-purple/15 text-purple-deep text-xs font-medium px-2 py-0.5 rounded-full">Whiteheads</span>
+              <p className="text-xs text-muted-foreground">Closed pores that appear as small white bumps</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Inflammatory</h4>
+          <div className="space-y-2">
+            <div className="bg-blush/30 rounded-lg p-2 flex items-center gap-2">
+              <span className="bg-pink-100 text-pink-700 text-xs font-medium px-2 py-0.5 rounded-full">Papules</span>
+              <p className="text-xs text-muted-foreground">Small, red, tender bumps without pus</p>
+            </div>
+            <div className="bg-blush/30 rounded-lg p-2 flex items-center gap-2">
+              <span className="bg-pink-100 text-pink-700 text-xs font-medium px-2 py-0.5 rounded-full">Pustules</span>
+              <p className="text-xs text-muted-foreground">Red bumps with white/yellow pus at centre</p>
+            </div>
+            <div className="bg-blush/30 rounded-lg p-2 flex items-center gap-2">
+              <span className="bg-pink-200 text-pink-800 text-xs font-medium px-2 py-0.5 rounded-full">Nodules/Cysts</span>
+              <p className="text-xs text-muted-foreground">Deep, painful lumps with highest scarring risk</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="bg-red-50/80 border border-red-200 rounded-lg p-2">
-        <h4 className="font-semibold text-red-800 text-xs">Moderate-Severe</h4>
-        <p className="text-[10px] text-red-700">35+ bumps, nodules/cysts, scarring. May need prescription.</p>
+    </div>
+
+    <div>
+      <h3 className="font-semibold text-lg text-foreground mb-3">How Serious Is My Acne?</h3>
+      <div className="grid sm:grid-cols-2 gap-3">
+        <div className="bg-green-50/80 border border-green-200 rounded-xl p-3">
+          <h4 className="font-semibold text-green-800 text-sm mb-1">Mild to Moderate</h4>
+          <p className="text-xs text-green-700">Any blackheads/whiteheads, up to 34 red bumps. Often responds well to over-the-counter treatments.</p>
+        </div>
+        <div className="bg-red-50/80 border border-red-200 rounded-xl p-3">
+          <h4 className="font-semibold text-red-800 text-sm mb-1">Moderate to Severe</h4>
+          <p className="text-xs text-red-700">35+ red bumps, nodules/cysts present, or scarring developing. May need prescription treatment.</p>
+        </div>
       </div>
     </div>
   </div>;
@@ -193,178 +202,204 @@ const TreatmentsContent = () => <div className="space-y-4">
       </div>
     </div>
   </div>;
-const RoutineContent = () => <div className="space-y-2">
-    <div className="bg-lavender-light/50 rounded-lg p-2">
-      <h3 className="font-semibold text-foreground text-xs mb-1">Golden Rules</h3>
-      <div className="grid grid-cols-2 gap-x-3 text-[10px] text-muted-foreground">
-        <span className="flex items-center gap-1"><CheckCircle className="w-2.5 h-2.5 text-green-600" /> One new active at a time</span>
-        <span className="flex items-center gap-1"><CheckCircle className="w-2.5 h-2.5 text-green-600" /> Wait 4-6 weeks between products</span>
-        <span className="flex items-center gap-1"><CheckCircle className="w-2.5 h-2.5 text-green-600" /> SPF daily — non-negotiable</span>
-        <span className="flex items-center gap-1"><CheckCircle className="w-2.5 h-2.5 text-green-600" /> Even oily skin needs moisturiser</span>
-      </div>
+const RoutineContent = () => <div className="space-y-6">
+    <div className="bg-lavender-light/50 rounded-xl p-4 mb-4">
+      <h3 className="font-semibold text-foreground mb-2 text-sm">Golden Rules</h3>
+      <ul className="text-xs text-muted-foreground space-y-1">
+        <li className="flex items-start gap-2"><CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0 mt-0.5" /> Introduce only one new active at a time</li>
+        <li className="flex items-start gap-2"><CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0 mt-0.5" /> Wait 4-6 weeks before adding another product</li>
+        <li className="flex items-start gap-2"><CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0 mt-0.5" /> SPF is non-negotiable when using any active</li>
+        <li className="flex items-start gap-2"><CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0 mt-0.5" /> Even oily skin needs moisturiser</li>
+      </ul>
     </div>
 
-    <div className="grid grid-cols-2 gap-2">
-      <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-2">
-        <div className="flex items-center gap-1 mb-1">
-          <Sun className="w-3.5 h-3.5 text-amber-600" />
-          <h3 className="font-semibold text-amber-900 text-xs">Morning</h3>
+    <div className="grid sm:grid-cols-2 gap-4">
+      <div className="bg-amber-50/80 border border-amber-200 rounded-xl p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <Sun className="w-5 h-5 text-amber-600" />
+          <h3 className="font-semibold text-amber-900">Morning</h3>
         </div>
-        <ol className="text-[10px] text-amber-800 space-y-0.5">
-          <li><span className="font-medium">1.</span> Gentle cleanser</li>
-          <li><span className="font-medium">2.</span> Niacinamide or Azelaic Acid (optional)</li>
-          <li><span className="font-medium">3.</span> Lightweight moisturiser</li>
+        <ol className="text-xs text-amber-800 space-y-2">
+          <li><span className="font-medium">1.</span> Gentle, fragrance-free cleanser</li>
+          <li><span className="font-medium">2.</span> Niacinamide or Azelaic Acid serum (optional)</li>
+          <li><span className="font-medium">3.</span> Lightweight, non-comedogenic moisturiser</li>
           <li><span className="font-medium">4.</span> SPF 30-50 (essential!)</li>
         </ol>
       </div>
 
-      <div className="bg-indigo-50/80 border border-indigo-200 rounded-lg p-2">
-        <div className="flex items-center gap-1 mb-1">
-          <Moon className="w-3.5 h-3.5 text-indigo-600" />
-          <h3 className="font-semibold text-indigo-900 text-xs">Evening</h3>
+      <div className="bg-indigo-50/80 border border-indigo-200 rounded-xl p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <Moon className="w-5 h-5 text-indigo-600" />
+          <h3 className="font-semibold text-indigo-900">Evening</h3>
         </div>
-        <ol className="text-[10px] text-indigo-800 space-y-0.5">
-          <li><span className="font-medium">1.</span> Double cleanse if SPF/makeup</li>
-          <li><span className="font-medium">2.</span> Treatment (BP OR Adapalene)</li>
-          <li><span className="font-medium">3.</span> Wait 10-15 mins to absorb</li>
-          <li><span className="font-medium">4.</span> Moisturiser</li>
+        <ol className="text-xs text-indigo-800 space-y-2">
+          <li><span className="font-medium">1.</span> Double cleanse if wearing SPF/makeup</li>
+          <li><span className="font-medium">2.</span> Treatment (Benzoyl Peroxide OR Adapalene)</li>
+          <li><span className="font-medium">3.</span> Wait 10-15 minutes for treatment to absorb</li>
+          <li><span className="font-medium">4.</span> Moisturiser (be generous if skin feels dry)</li>
         </ol>
       </div>
     </div>
 
-    <div className="bg-card border border-border rounded-lg p-2">
-      <h3 className="font-semibold text-foreground text-xs mb-1">NICE First-Line Recommendations</h3>
-      <div className="text-[10px] text-muted-foreground grid grid-cols-2 gap-2">
-        <p><strong>Mild-Moderate:</strong> Adapalene 0.1% + Benzoyl Peroxide 2.5% OR BP + Azelaic Acid</p>
-        <p><strong>Moderate-Severe:</strong> Seek professional consultation for prescription options</p>
+    <div className="bg-card border border-border rounded-xl p-4">
+      <h3 className="font-semibold text-foreground text-sm mb-2">NICE-Recommended First-Line Approaches</h3>
+      <div className="text-xs text-muted-foreground space-y-2">
+        <p><strong>For Mild-Moderate:</strong> Adapalene 0.1% + Benzoyl Peroxide 2.5% combination (e.g., Differin + Acnecide) OR Benzoyl Peroxide + Azelaic Acid</p>
+        <p><strong>For Moderate-Severe:</strong> Consider professional consultation for prescription options (oral antibiotics + topical combination)</p>
       </div>
     </div>
   </div>;
-const PrescriptionContent = () => <div className="space-y-2">
-    <div className="bg-purple-50/80 border border-purple-200 rounded-lg p-2">
-      <h3 className="font-semibold text-purple-900 text-xs mb-1">When to Seek Help</h3>
-      <div className="grid grid-cols-2 gap-x-2 text-[10px] text-purple-800">
-        <span>• OTC not working after 12 weeks</span>
-        <span>• Nodules/cysts present</span>
-        <span>• Acne causing scarring</span>
-        <span>• Affecting mental health</span>
-        <span>• Hormonal (jawline, period-related)</span>
-      </div>
+const PrescriptionContent = () => <div className="space-y-4">
+    <p className="text-sm text-muted-foreground">
+      See your GP or dermatologist if over-the-counter treatments haven't worked after 12 weeks of consistent use.
+    </p>
+
+    <div className="bg-purple-50/80 border border-purple-200 rounded-xl p-4">
+      <h3 className="font-semibold text-purple-900 mb-2 text-sm">When to Seek Professional Help</h3>
+      <ul className="text-xs text-purple-800 space-y-1">
+        <li>• Moderate-severe acne not responding to over-the-counter products</li>
+        <li>• Nodules or cysts present (deep, painful lumps)</li>
+        <li>• Acne causing scarring</li>
+        <li>• Significant impact on your mental health or confidence</li>
+        <li>• You suspect hormonal acne (jawline breakouts, related to periods)</li>
+      </ul>
     </div>
 
-    <div className="grid grid-cols-2 gap-2">
-      <div className="bg-card border border-border rounded-lg p-2">
-        <h3 className="font-semibold text-foreground text-xs">Topical Antibiotics</h3>
-        <p className="text-[10px] text-muted-foreground">Clindamycin or erythromycin — always with BP to prevent resistance</p>
+    <div className="space-y-3">
+      <div className="bg-card border border-border rounded-xl p-3">
+        <h3 className="font-semibold text-foreground text-sm">Topical Antibiotics</h3>
+        <p className="text-xs text-muted-foreground">Clindamycin or erythromycin — always prescribed with benzoyl peroxide to prevent bacteria becoming resistant</p>
       </div>
-      <div className="bg-card border border-border rounded-lg p-2">
-        <h3 className="font-semibold text-foreground text-xs">Oral Antibiotics</h3>
-        <p className="text-[10px] text-muted-foreground">Lymecycline/doxycycline — 3-month courses. Improvement in 6-8 weeks</p>
+      <div className="bg-card border border-border rounded-xl p-3">
+        <h3 className="font-semibold text-foreground text-sm">Oral Antibiotics</h3>
+        <p className="text-xs text-muted-foreground">Lymecycline or doxycycline — typically 3-month courses. You should see improvement within 6-8 weeks</p>
       </div>
-      <div className="bg-card border border-border rounded-lg p-2">
-        <h3 className="font-semibold text-foreground text-xs">Combined Pill (COCP)</h3>
-        <p className="text-[10px] text-muted-foreground">For hormonal acne — Dianette, Yasmin. Takes 3-4 months</p>
+      <div className="bg-card border border-border rounded-xl p-3">
+        <h3 className="font-semibold text-foreground text-sm">Combined Oral Contraceptives</h3>
+        <p className="text-xs text-muted-foreground">For hormonal acne in women — options include Dianette, Yasmin. Takes 3-4 months to see improvement</p>
       </div>
-      <div className="bg-card border border-border rounded-lg p-2">
-        <h3 className="font-semibold text-foreground text-xs">Isotretinoin (Roaccutane)</h3>
-        <p className="text-[10px] text-muted-foreground">Dermatologist-only for severe/scarring acne. Very effective.</p>
+      <div className="bg-card border border-border rounded-xl p-3">
+        <h3 className="font-semibold text-foreground text-sm">Isotretinoin (Roaccutane)</h3>
+        <p className="text-xs text-muted-foreground">Dermatologist-only prescription for severe or scarring acne. Very effective but requires careful monitoring</p>
       </div>
     </div>
   </div>;
-const MistakesContent = () => <div className="grid grid-cols-2 gap-2">
+const MistakesContent = () => <div className="space-y-3">
+    <p className="text-sm text-muted-foreground mb-4">
+      Avoid these common pitfalls that can make acne worse or delay your results.
+    </p>
+
     {[{
     mistake: "Giving up too soon",
-    fix: "Treatments take 6-8 weeks min. Full results at 12 weeks."
+    fix: "Treatments take 6-8 weeks minimum. Full results often take 12 weeks. Don't give up after 2-3 weeks!"
   }, {
-    mistake: "Too many products at once",
-    fix: "ONE active at a time. Wait 4-6 weeks between new products."
+    mistake: "Using too many products at once",
+    fix: "Start ONE active ingredient at a time. Wait 4-6 weeks before adding another to know what's working"
   }, {
-    mistake: "Over-cleansing",
-    fix: "Gentle cleanser twice daily. Over-washing damages barrier."
+    mistake: "Over-cleansing or harsh scrubbing",
+    fix: "Stick to gentle, pH-balanced cleanser twice daily. Over-washing damages your skin barrier"
   }, {
-    mistake: "Skipping moisturiser",
-    fix: "Dehydrated skin = MORE oil. Use lightweight moisturiser."
+    mistake: "Skipping moisturiser because skin is oily",
+    fix: "Dehydrated skin produces MORE oil. Use a lightweight, non-comedogenic moisturiser"
   }, {
-    mistake: "No SPF with actives",
-    fix: "SPF 30+ daily essential with retinoids/acids."
+    mistake: "Not using SPF with actives",
+    fix: "SPF 30+ daily is essential with retinoids/acids — sun damage worsens marks and irritation"
   }, {
-    mistake: "Picking spots",
-    fix: "Causes scarring. Use hydrocolloid patches instead."
+    mistake: "Picking and squeezing spots",
+    fix: "This causes scarring and spreads bacteria. Use hydrocolloid patches instead if tempted"
   }, {
-    mistake: "Antibiotics alone",
-    fix: "Always combine with topicals to prevent resistance."
-  }].map((item, index) => <div key={index} className="bg-card border border-border rounded-lg p-2 flex gap-2">
-        <XCircle className="w-3 h-3 text-red-500 flex-shrink-0 mt-0.5" />
+    mistake: "Using antibiotics alone",
+    fix: "NICE guidelines say antibiotics should always be combined with topical treatments to prevent resistance"
+  }].map((item, index) => <div key={index} className="bg-card border border-border rounded-xl p-3 flex gap-3">
+        <XCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
         <div>
-          <p className="text-xs font-medium text-foreground">{item.mistake}</p>
-          <p className="text-[10px] text-muted-foreground">{item.fix}</p>
+          <p className="text-sm font-medium text-foreground">{item.mistake}</p>
+          <p className="text-xs text-muted-foreground">{item.fix}</p>
         </div>
       </div>)}
   </div>;
-const ActionPlanContent = () => <div className="grid grid-cols-2 gap-2">
+const ActionPlanContent = () => <div className="space-y-4">
+    <p className="text-sm text-muted-foreground mb-4">
+      A structured approach to introducing treatments and tracking your progress.
+    </p>
+
     {[{
     weeks: "1-2",
     title: "Foundation",
-    tasks: ["Gentle cleansing AM/PM", "Add moisturiser", "Start SPF 30+", "Take baseline photos"]
+    tasks: ["Establish gentle cleansing routine (morning and evening)", "Add non-comedogenic moisturiser", "Start daily SPF 30+", "Take baseline photos for comparison"]
   }, {
     weeks: "3-4",
     title: "First Active",
-    tasks: ["Choose ONE: BP, azelaic, or adapalene", "Start slowly", "Monitor for irritation"]
+    tasks: ["Choose ONE: benzoyl peroxide, azelaic acid, OR adapalene", "Start slowly (2-3x weekly for retinoid, daily for benzoyl peroxide)", "Monitor for irritation and adjust if needed"]
   }, {
     weeks: "6-8",
-    title: "Assess",
-    tasks: ["Review tracking/patterns", "Compare photos", "Adjust frequency if needed"]
+    title: "Assess & Adjust",
+    tasks: ["Review your tracking — notice any patterns?", "Compare progress photos", "If improving, continue! If not, increase frequency of active"]
   }, {
     weeks: "9-12",
-    title: "Evaluate",
-    tasks: ["Should see improvement", "Continue or seek help", "Consider maintenance"]
-  }].map((phase, index) => <div key={index} className="bg-card border border-border rounded-lg p-2">
-        <div className="flex items-center gap-2 mb-1">
-          <span className="bg-primary text-primary-foreground text-[10px] font-bold px-1.5 py-0.5 rounded-full">W{phase.weeks}</span>
-          <h3 className="font-semibold text-foreground text-xs">{phase.title}</h3>
+    title: "Evaluate Progress",
+    tasks: ["You should see noticeable improvement by now", "If seeing improvement, continue with maintenance", "If not adequately improved, seek professional consultation"]
+  }].map((phase, index) => <div key={index} className="bg-card border border-border rounded-xl p-4">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">Weeks {phase.weeks}</span>
+          <h3 className="font-semibold text-foreground text-sm">{phase.title}</h3>
         </div>
-        <ul className="text-[10px] text-muted-foreground space-y-0.5">
-          {phase.tasks.map((task, i) => <li key={i} className="flex items-start gap-1">
-              <CheckCircle className="w-2.5 h-2.5 text-primary flex-shrink-0 mt-0.5" />
+        <ul className="text-xs text-muted-foreground space-y-1">
+          {phase.tasks.map((task, i) => <li key={i} className="flex items-start gap-2">
+              <CheckCircle className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
               {task}
             </li>)}
         </ul>
       </div>)}
   </div>;
-const PurgingContent = () => <div className="space-y-2">
-    <div className="grid grid-cols-2 gap-2">
-      <div className="bg-green-50/80 border border-green-200 rounded-lg p-2">
-        <div className="flex items-center gap-1 mb-1">
-          <CheckCircle className="w-3.5 h-3.5 text-green-600" />
-          <h3 className="font-semibold text-green-900 text-xs">Normal Purging</h3>
+const PurgingContent = () => <div className="space-y-4">
+    <p className="text-sm text-muted-foreground mb-4">
+      One of the most confusing parts of starting treatment is knowing whether your skin is "purging" (a normal adjustment) or having a bad reaction.
+    </p>
+
+    <div className="grid sm:grid-cols-2 gap-4">
+      <div className="bg-green-50/80 border border-green-200 rounded-xl p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <CheckCircle className="w-5 h-5 text-green-600" />
+          <h3 className="font-semibold text-green-900 text-sm">Normal Purging</h3>
         </div>
-        <ul className="text-[10px] text-green-800 space-y-0.5">
-          <li>• Cell-turnover actives only (retinoids, AHAs, BHAs)</li>
-          <li>• Breakouts in usual problem areas</li>
-          <li>• Small, surface spots heal faster</li>
+        <ul className="text-xs text-green-800 space-y-1">
+          <li>• Only happens with cell-turnover actives (retinoids, AHAs, BHAs)</li>
+          <li>• Breakouts in your usual problem areas</li>
+          <li>• Small, surface-level spots that heal faster than usual</li>
           <li>• Improves within 4-6 weeks</li>
+          <li>• May have mild dryness or peeling (especially retinoids)</li>
         </ul>
       </div>
-      <div className="bg-red-50/80 border border-red-200 rounded-lg p-2">
-        <div className="flex items-center gap-1 mb-1">
-          <XCircle className="w-3.5 h-3.5 text-red-600" />
-          <h3 className="font-semibold text-red-900 text-xs">Bad Reaction — Stop</h3>
+
+      <div className="bg-red-50/80 border border-red-200 rounded-xl p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <XCircle className="w-5 h-5 text-red-600" />
+          <h3 className="font-semibold text-red-900 text-sm">Bad Reaction — Stop Product</h3>
         </div>
-        <ul className="text-[10px] text-red-800 space-y-0.5">
-          <li>• Breakouts in NEW areas</li>
-          <li>• Painful cysts/deep nodules</li>
-          <li>• Severe burning/stinging</li>
+        <ul className="text-xs text-red-800 space-y-1">
+          <li>• Breakouts in new areas where you don't normally get spots</li>
+          <li>• Painful cysts or deep nodules</li>
+          <li>• Severe burning, stinging, or itching</li>
+          <li>• Excessive dryness, cracking, or peeling</li>
           <li>• Gets worse after 6-8 weeks</li>
         </ul>
       </div>
     </div>
-    <div className="grid grid-cols-4 gap-1.5 text-[10px] text-muted-foreground">
-      <div className="bg-card border border-border rounded p-1.5"><strong>Retinoids:</strong> 4-8 wks</div>
-      <div className="bg-card border border-border rounded p-1.5"><strong>BP:</strong> 2-4 weeks</div>
-      <div className="bg-card border border-border rounded p-1.5"><strong>Salicylic:</strong> 2-3 wks</div>
-      <div className="bg-card border border-border rounded p-1.5"><strong>Azelaic:</strong> 2-4 wks</div>
+
+    <div className="bg-card border border-border rounded-xl p-4">
+      <h3 className="font-semibold text-foreground text-sm mb-2">How Long Does Purging Last?</h3>
+      <div className="grid sm:grid-cols-2 gap-2 text-xs text-muted-foreground">
+        <p>• <strong>Retinoids:</strong> 4-8 weeks, sometimes up to 12</p>
+        <p>• <strong>Benzoyl peroxide:</strong> 2-4 weeks</p>
+        <p>• <strong>Salicylic acid:</strong> 2-3 weeks</p>
+        <p>• <strong>Azelaic acid:</strong> 2-4 weeks</p>
+      </div>
     </div>
-    <p className="text-[10px] text-amber-800 bg-amber-50/80 border border-amber-200 rounded p-1.5"><strong>If in doubt:</strong> Stop product, see if skin improves in 1-2 weeks. Beyond 8 weeks = see professional.</p>
+
+    <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-3">
+      <p className="text-xs text-amber-800"><strong>If in doubt:</strong> Stop the product and see if your skin improves within 1-2 weeks. If purging continues beyond 8 weeks or worsens, consult a healthcare professional.</p>
+    </div>
   </div>;
 const ScarsContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
