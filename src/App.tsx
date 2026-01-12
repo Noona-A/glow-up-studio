@@ -54,6 +54,10 @@ const Panthenol = lazy(() => import("./pages/ingredients/Panthenol"));
 const Propolis = lazy(() => import("./pages/ingredients/Propolis"));
 const SnailMucin = lazy(() => import("./pages/ingredients/SnailMucin"));
 
+// Guides
+const GuidesHub = lazy(() => import("./pages/guides/GuidesHub"));
+const AcneGuide = lazy(() => import("./pages/guides/AcneGuide"));
+
 const queryClient = new QueryClient();
 
 // Loading component
@@ -118,6 +122,10 @@ const App = () => (
                   <Route path="/ingredients/panthenol" element={<Panthenol />} />
                   <Route path="/ingredients/propolis" element={<Propolis />} />
                   <Route path="/ingredients/snail-mucin" element={<SnailMucin />} />
+                  
+                  {/* Guides */}
+                  <Route path="/guides" element={<GuidesHub />} />
+                  <Route path="/guides/acne" element={<AcneGuide />} />
                   
                   {/* Catch-all */}
                   <Route path="*" element={<NotFound />} />

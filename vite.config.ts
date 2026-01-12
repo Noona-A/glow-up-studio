@@ -39,6 +39,8 @@ const prerenderRoutes = [
   "/ingredients/panthenol",
   "/ingredients/propolis",
   "/ingredients/snail-mucin",
+  "/guides",
+  "/guides/acne",
 ];
 
 // https://vitejs.dev/config/
