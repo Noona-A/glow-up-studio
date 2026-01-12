@@ -36,6 +36,22 @@ const laserFaqs = [
   {
     question: "Are the results permanent?",
     answer: "Laser hair removal provides long-term hair reduction. Many clients enjoy smooth skin for months or years. Occasional maintenance sessions may be recommended to maintain results."
+  },
+  {
+    question: "Am I suitable for laser hair removal?",
+    answer: "Suitability depends on your skin tone, hair colour, medical history, and the area being treated. This is assessed during your consultation to ensure the treatment is safe and effective for you."
+  },
+  {
+    question: "Can laser hair removal be done on darker skin tones?",
+    answer: "Yes. With appropriate technology and settings, laser hair removal can be safely performed on darker skin tones. A consultation is essential to assess suitability and select the correct approach."
+  },
+  {
+    question: "Is there any downtime after laser hair removal?",
+    answer: "There is little to no downtime. Most clients return to normal activities immediately. Mild redness or warmth may occur but usually settles within a few hours."
+  },
+  {
+    question: "How long should I wait between sessions?",
+    answer: "Sessions are typically spaced 4–6 weeks apart depending on the area treated and your hair growth cycle. This timing helps target hairs in the active growth phase."
   }
 ];
 
@@ -63,6 +79,33 @@ const skincareFaqs = [
   {
     question: "Can I book treatments after my consultation?",
     answer: "Yes. If appropriate, treatments can be booked following your consultation. You can book online via the website or speak to our team for advice."
+  },
+  {
+    question: "How long does a skincare consultation take?",
+    answer: "Most consultations last around 30 minutes, allowing enough time for a thorough skin assessment and personalised recommendations."
+  },
+  {
+    question: "Can you help if I have sensitive or reactive skin?",
+    answer: "Yes. Sensitive and reactive skin is carefully assessed, and treatment plans are tailored to minimise irritation while supporting skin health."
+  }
+];
+
+const generalFaqs = [
+  {
+    question: "Do you offer consultations before all treatments?",
+    answer: "Yes. A consultation is required before treatment to ensure suitability, safety, and to create a personalised plan."
+  },
+  {
+    question: "Can I wear makeup after treatments?",
+    answer: "This depends on the treatment performed. Your practitioner will advise you on when it's safe to apply makeup and which products to use."
+  },
+  {
+    question: "What if I'm pregnant or breastfeeding?",
+    answer: "Some treatments may not be suitable during pregnancy or breastfeeding. This will be discussed during your consultation to ensure your safety."
+  },
+  {
+    question: "Do you treat both men and women?",
+    answer: "Yes. Our treatments and consultations are suitable for all genders."
   }
 ];
 
@@ -81,6 +124,14 @@ const structuredData = {
       }
     })),
     ...skincareFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    })),
+    ...generalFaqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -184,8 +235,36 @@ const FAQ = () => {
           </div>
         </section>
 
+        {/* General / Practical FAQs */}
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-2xl md:text-3xl font-semibold text-foreground mb-8">
+                General & Practical FAQs
+              </h2>
+              
+              <Accordion type="single" collapsible className="w-full space-y-3">
+                {generalFaqs.map((faq, index) => (
+                  <AccordionItem 
+                    key={index} 
+                    value={`general-${index}`}
+                    className="border border-border/50 rounded-lg px-6 bg-card"
+                  >
+                    <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-5">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-accent/20">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="font-serif text-2xl md:text-3xl font-semibold text-foreground mb-4">
