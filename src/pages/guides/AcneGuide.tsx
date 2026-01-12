@@ -3,31 +3,82 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, AlertTriangle, CheckCircle, XCircle, Clock, Sparkles, ShieldCheck, Heart, AlertCircle, Pill, Droplets, Sun, Moon, ChevronRight, BookOpen, FlaskConical, Calendar, Zap, ShoppingBag, Timer, Baby, Shirt, Stethoscope, Palette, HeartHandshake, Apple } from "lucide-react";
 import SEO from "@/components/SEO";
-
-const sections = [
-  { id: "understanding", label: "Understanding Acne", icon: BookOpen },
-  { id: "treatments", label: "Treatments", icon: FlaskConical },
-  { id: "routine", label: "Your Routine", icon: Sun },
-  { id: "prescription", label: "Prescription Help", icon: Pill },
-  { id: "mistakes", label: "Common Mistakes", icon: XCircle },
-  { id: "action-plan", label: "12-Week Plan", icon: Calendar },
-  { id: "purging", label: "Purging vs Breakouts", icon: AlertCircle },
-  { id: "scars", label: "Scars & Marks", icon: Heart },
-  { id: "layering", label: "Layering Actives", icon: Zap },
-  { id: "emergency", label: "Emergency Treatment", icon: AlertTriangle },
-  { id: "pregnancy", label: "Pregnancy-Safe", icon: Baby },
-  { id: "body-acne", label: "Body Acne", icon: Shirt },
-  { id: "hormonal", label: "Hormonal & PCOS", icon: Stethoscope },
-  { id: "makeup", label: "Makeup Tips", icon: Palette },
-  { id: "mental-health", label: "Mental Health", icon: HeartHandshake },
-  { id: "diet", label: "Diet & Lifestyle", icon: Apple },
-  { id: "budget", label: "Budget Routines", icon: ShoppingBag },
-  { id: "timeline", label: "Timeline", icon: Timer },
-];
+const sections = [{
+  id: "understanding",
+  label: "Understanding Acne",
+  icon: BookOpen
+}, {
+  id: "treatments",
+  label: "Treatments",
+  icon: FlaskConical
+}, {
+  id: "routine",
+  label: "Your Routine",
+  icon: Sun
+}, {
+  id: "prescription",
+  label: "Prescription Help",
+  icon: Pill
+}, {
+  id: "mistakes",
+  label: "Common Mistakes",
+  icon: XCircle
+}, {
+  id: "action-plan",
+  label: "12-Week Plan",
+  icon: Calendar
+}, {
+  id: "purging",
+  label: "Purging vs Breakouts",
+  icon: AlertCircle
+}, {
+  id: "scars",
+  label: "Scars & Marks",
+  icon: Heart
+}, {
+  id: "layering",
+  label: "Layering Actives",
+  icon: Zap
+}, {
+  id: "emergency",
+  label: "Emergency Treatment",
+  icon: AlertTriangle
+}, {
+  id: "pregnancy",
+  label: "Pregnancy-Safe",
+  icon: Baby
+}, {
+  id: "body-acne",
+  label: "Body Acne",
+  icon: Shirt
+}, {
+  id: "hormonal",
+  label: "Hormonal & PCOS",
+  icon: Stethoscope
+}, {
+  id: "makeup",
+  label: "Makeup Tips",
+  icon: Palette
+}, {
+  id: "mental-health",
+  label: "Mental Health",
+  icon: HeartHandshake
+}, {
+  id: "diet",
+  label: "Diet & Lifestyle",
+  icon: Apple
+}, {
+  id: "budget",
+  label: "Budget Routines",
+  icon: ShoppingBag
+}, {
+  id: "timeline",
+  label: "Timeline",
+  icon: Timer
+}];
 
 // Section content components
-const UnderstandingContent = () => (
-  <div className="space-y-6">
+const UnderstandingContent = () => <div className="space-y-6">
     <div>
       <h3 className="font-semibold text-lg text-foreground mb-3">What Causes Acne?</h3>
       <p className="text-muted-foreground mb-4 text-sm">
@@ -102,11 +153,8 @@ const UnderstandingContent = () => (
         </div>
       </div>
     </div>
-  </div>
-);
-
-const TreatmentsContent = () => (
-  <div className="space-y-4">
+  </div>;
+const TreatmentsContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       These treatments are recommended by UK clinical guidelines. Over-the-counter options can be very effective for mild-moderate acne.
     </p>
@@ -153,11 +201,8 @@ const TreatmentsContent = () => (
         <p className="text-xs text-muted-foreground">Surface exfoliation that improves texture and mild dark marks. Start with lower strengths.</p>
       </div>
     </div>
-  </div>
-);
-
-const RoutineContent = () => (
-  <div className="space-y-6">
+  </div>;
+const RoutineContent = () => <div className="space-y-6">
     <div className="bg-lavender-light/50 rounded-xl p-4 mb-4">
       <h3 className="font-semibold text-foreground mb-2 text-sm">Golden Rules</h3>
       <ul className="text-xs text-muted-foreground space-y-1">
@@ -203,11 +248,8 @@ const RoutineContent = () => (
         <p><strong>For Moderate-Severe:</strong> Consider professional consultation for prescription options (oral antibiotics + topical combination)</p>
       </div>
     </div>
-  </div>
-);
-
-const PrescriptionContent = () => (
-  <div className="space-y-4">
+  </div>;
+const PrescriptionContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground">
       See your GP or dermatologist if over-the-counter treatments haven't worked after 12 weeks of consistent use.
     </p>
@@ -241,67 +283,76 @@ const PrescriptionContent = () => (
         <p className="text-xs text-muted-foreground">Dermatologist-only prescription for severe or scarring acne. Very effective but requires careful monitoring</p>
       </div>
     </div>
-  </div>
-);
-
-const MistakesContent = () => (
-  <div className="space-y-3">
+  </div>;
+const MistakesContent = () => <div className="space-y-3">
     <p className="text-sm text-muted-foreground mb-4">
       Avoid these common pitfalls that can make acne worse or delay your results.
     </p>
 
-    {[
-      { mistake: "Giving up too soon", fix: "Treatments take 6-8 weeks minimum. Full results often take 12 weeks. Don't give up after 2-3 weeks!" },
-      { mistake: "Using too many products at once", fix: "Start ONE active ingredient at a time. Wait 4-6 weeks before adding another to know what's working" },
-      { mistake: "Over-cleansing or harsh scrubbing", fix: "Stick to gentle, pH-balanced cleanser twice daily. Over-washing damages your skin barrier" },
-      { mistake: "Skipping moisturiser because skin is oily", fix: "Dehydrated skin produces MORE oil. Use a lightweight, non-comedogenic moisturiser" },
-      { mistake: "Not using SPF with actives", fix: "SPF 30+ daily is essential with retinoids/acids — sun damage worsens marks and irritation" },
-      { mistake: "Picking and squeezing spots", fix: "This causes scarring and spreads bacteria. Use hydrocolloid patches instead if tempted" },
-      { mistake: "Using antibiotics alone", fix: "NICE guidelines say antibiotics should always be combined with topical treatments to prevent resistance" },
-    ].map((item, index) => (
-      <div key={index} className="bg-card border border-border rounded-xl p-3 flex gap-3">
+    {[{
+    mistake: "Giving up too soon",
+    fix: "Treatments take 6-8 weeks minimum. Full results often take 12 weeks. Don't give up after 2-3 weeks!"
+  }, {
+    mistake: "Using too many products at once",
+    fix: "Start ONE active ingredient at a time. Wait 4-6 weeks before adding another to know what's working"
+  }, {
+    mistake: "Over-cleansing or harsh scrubbing",
+    fix: "Stick to gentle, pH-balanced cleanser twice daily. Over-washing damages your skin barrier"
+  }, {
+    mistake: "Skipping moisturiser because skin is oily",
+    fix: "Dehydrated skin produces MORE oil. Use a lightweight, non-comedogenic moisturiser"
+  }, {
+    mistake: "Not using SPF with actives",
+    fix: "SPF 30+ daily is essential with retinoids/acids — sun damage worsens marks and irritation"
+  }, {
+    mistake: "Picking and squeezing spots",
+    fix: "This causes scarring and spreads bacteria. Use hydrocolloid patches instead if tempted"
+  }, {
+    mistake: "Using antibiotics alone",
+    fix: "NICE guidelines say antibiotics should always be combined with topical treatments to prevent resistance"
+  }].map((item, index) => <div key={index} className="bg-card border border-border rounded-xl p-3 flex gap-3">
         <XCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
         <div>
           <p className="text-sm font-medium text-foreground">{item.mistake}</p>
           <p className="text-xs text-muted-foreground">{item.fix}</p>
         </div>
-      </div>
-    ))}
-  </div>
-);
-
-const ActionPlanContent = () => (
-  <div className="space-y-4">
+      </div>)}
+  </div>;
+const ActionPlanContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       A structured approach to introducing treatments and tracking your progress.
     </p>
 
-    {[
-      { weeks: "1-2", title: "Foundation", tasks: ["Establish gentle cleansing routine (morning and evening)", "Add non-comedogenic moisturiser", "Start daily SPF 30+", "Take baseline photos for comparison"] },
-      { weeks: "3-4", title: "First Active", tasks: ["Choose ONE: benzoyl peroxide, azelaic acid, OR adapalene", "Start slowly (2-3x weekly for retinoid, daily for benzoyl peroxide)", "Monitor for irritation and adjust if needed"] },
-      { weeks: "6-8", title: "Assess & Adjust", tasks: ["Review your tracking — notice any patterns?", "Compare progress photos", "If improving, continue! If not, increase frequency of active"] },
-      { weeks: "9-12", title: "Evaluate Progress", tasks: ["You should see noticeable improvement by now", "If seeing improvement, continue with maintenance", "If not adequately improved, seek professional consultation"] },
-    ].map((phase, index) => (
-      <div key={index} className="bg-card border border-border rounded-xl p-4">
+    {[{
+    weeks: "1-2",
+    title: "Foundation",
+    tasks: ["Establish gentle cleansing routine (morning and evening)", "Add non-comedogenic moisturiser", "Start daily SPF 30+", "Take baseline photos for comparison"]
+  }, {
+    weeks: "3-4",
+    title: "First Active",
+    tasks: ["Choose ONE: benzoyl peroxide, azelaic acid, OR adapalene", "Start slowly (2-3x weekly for retinoid, daily for benzoyl peroxide)", "Monitor for irritation and adjust if needed"]
+  }, {
+    weeks: "6-8",
+    title: "Assess & Adjust",
+    tasks: ["Review your tracking — notice any patterns?", "Compare progress photos", "If improving, continue! If not, increase frequency of active"]
+  }, {
+    weeks: "9-12",
+    title: "Evaluate Progress",
+    tasks: ["You should see noticeable improvement by now", "If seeing improvement, continue with maintenance", "If not adequately improved, seek professional consultation"]
+  }].map((phase, index) => <div key={index} className="bg-card border border-border rounded-xl p-4">
         <div className="flex items-center gap-3 mb-2">
           <span className="bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">Weeks {phase.weeks}</span>
           <h3 className="font-semibold text-foreground text-sm">{phase.title}</h3>
         </div>
         <ul className="text-xs text-muted-foreground space-y-1">
-          {phase.tasks.map((task, i) => (
-            <li key={i} className="flex items-start gap-2">
+          {phase.tasks.map((task, i) => <li key={i} className="flex items-start gap-2">
               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
               {task}
-            </li>
-          ))}
+            </li>)}
         </ul>
-      </div>
-    ))}
-  </div>
-);
-
-const PurgingContent = () => (
-  <div className="space-y-4">
+      </div>)}
+  </div>;
+const PurgingContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       One of the most confusing parts of starting treatment is knowing whether your skin is "purging" (a normal adjustment) or having a bad reaction.
     </p>
@@ -349,11 +400,8 @@ const PurgingContent = () => (
     <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-3">
       <p className="text-xs text-amber-800"><strong>If in doubt:</strong> Stop the product and see if your skin improves within 1-2 weeks. If purging continues beyond 8 weeks or worsens, consult a healthcare professional.</p>
     </div>
-  </div>
-);
-
-const ScarsContent = () => (
-  <div className="space-y-4">
+  </div>;
+const ScarsContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       After acne heals, you may be left with marks. Understanding the difference between temporary marks and permanent scars is key to choosing the right treatment.
     </p>
@@ -381,11 +429,8 @@ const ScarsContent = () => (
     <div className="bg-card border border-border rounded-xl p-3">
       <p className="text-xs text-muted-foreground"><strong>Most important step:</strong> Daily SPF 30+ is essential. UV exposure darkens existing marks and prevents them from fading. Nothing else will work without sun protection!</p>
     </div>
-  </div>
-);
-
-const LayeringContent = () => (
-  <div className="space-y-4">
+  </div>;
+const LayeringContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       Once you've introduced actives one at a time and your skin has adjusted, you can combine them strategically. Never introduce multiple new products at once.
     </p>
@@ -440,11 +485,8 @@ const LayeringContent = () => (
     <div className="bg-lavender-light/50 rounded-lg p-3">
       <p className="text-xs text-muted-foreground"><strong>Tip:</strong> When in doubt, alternate nights or use one product in the morning and one in the evening.</p>
     </div>
-  </div>
-);
-
-const EmergencyContent = () => (
-  <div className="space-y-4">
+  </div>;
+const EmergencyContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       Got a big event and a spot appeared? Here's what actually works (and what doesn't).
     </p>
@@ -493,11 +535,8 @@ const EmergencyContent = () => (
     <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-3">
       <p className="text-xs text-amber-800"><strong>Realistic expectations:</strong> Nothing makes a spot disappear overnight. These methods reduce redness, size, and pain. Prevention with a consistent routine is always better than emergency treatment.</p>
     </div>
-  </div>
-);
-
-const PregnancyContent = () => (
-  <div className="space-y-4">
+  </div>;
+const PregnancyContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       Some acne treatments are not safe during pregnancy. Here's what you can and can't use according to UK clinical guidelines.
     </p>
@@ -561,11 +600,8 @@ const PregnancyContent = () => (
     <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-3">
       <p className="text-xs text-amber-800"><strong>Important:</strong> Always tell your GP or midwife about any skincare products you're using during pregnancy.</p>
     </div>
-  </div>
-);
-
-const BodyAcneContent = () => (
-  <div className="space-y-4">
+  </div>;
+const BodyAcneContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       Body acne ("bacne") on the back, chest, and shoulders is common. The skin is thicker here and constantly in contact with clothing, making it a bit trickier to treat.
     </p>
@@ -610,11 +646,8 @@ const BodyAcneContent = () => (
     <div className="bg-purple-50/80 border border-purple-200 rounded-lg p-3">
       <p className="text-xs text-purple-800"><strong>See your GP if:</strong> Severe or painful cysts on back/chest, no improvement after 12 weeks of consistent treatment, or scarring developing.</p>
     </div>
-  </div>
-);
-
-const HormonalContent = () => (
-  <div className="space-y-4">
+  </div>;
+const HormonalContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       Up to 39% of women with adult acne have underlying PCOS. Hormonal acne often needs a different approach.
     </p>
@@ -666,11 +699,8 @@ const HormonalContent = () => (
     <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-3">
       <p className="text-xs text-amber-800"><strong>When to see your GP:</strong> Suspected PCOS, hormonal acne not responding to topical treatments, or if you're considering prescription options.</p>
     </div>
-  </div>
-);
-
-const MakeupContent = () => (
-  <div className="space-y-4">
+  </div>;
+const MakeupContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       Makeup doesn't cause acne for everyone, but choosing the right products matters.
     </p>
@@ -725,11 +755,8 @@ const MakeupContent = () => (
     <div className="bg-card border border-border rounded-lg p-3">
       <p className="text-xs text-muted-foreground"><strong>If you're breaking out:</strong> Try going makeup-free for 2 weeks to see if it helps. Simplify to just SPF + concealer on spots only.</p>
     </div>
-  </div>
-);
-
-const MentalHealthContent = () => (
-  <div className="space-y-4">
+  </div>;
+const MentalHealthContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       Acne can seriously affect how you feel. Studies show people with acne have rates of anxiety and depression similar to those with other chronic health conditions. Your feelings are valid.
     </p>
@@ -792,11 +819,8 @@ const MentalHealthContent = () => (
     <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-3">
       <p className="text-xs text-amber-800"><strong>Note:</strong> If you're on isotretinoin (Roaccutane), be aware it requires mental health monitoring. Report any mood changes to your prescriber immediately.</p>
     </div>
-  </div>
-);
-
-const DietContent = () => (
-  <div className="space-y-4">
+  </div>;
+const DietContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       UK guidelines say there's not enough evidence to recommend specific diets for acne. However, some research suggests potential links that may be worth exploring.
     </p>
@@ -844,11 +868,8 @@ const DietContent = () => (
     <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-3">
       <p className="text-xs text-amber-800"><strong>Bottom line:</strong> While we can't make definitive dietary recommendations, tracking your diet alongside breakouts can help YOU identify personal triggers. But remember — skincare routine is far more important than diet for most people.</p>
     </div>
-  </div>
-);
-
-const BudgetContent = () => (
-  <div className="space-y-4">
+  </div>;
+const BudgetContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       Effective skincare doesn't have to be expensive. Here's how to build a routine on a tight budget.
     </p>
@@ -914,32 +935,44 @@ const BudgetContent = () => (
         <li>• Face mists or sheet masks</li>
       </ul>
     </div>
-  </div>
-);
-
-const TimelineContent = () => (
-  <div className="space-y-4">
+  </div>;
+const TimelineContent = () => <div className="space-y-4">
     <p className="text-sm text-muted-foreground mb-4">
       One of the biggest mistakes is having unrealistic expectations. Here's what to actually expect.
     </p>
 
     <div className="space-y-3">
-      {[
-        { time: "Week 1-2", status: "Adjustment period", desc: "Possible initial irritation, dryness. This is completely normal." },
-        { time: "Week 3-4", status: "Purging may happen", desc: "Skin may look worse before better with retinoids/acids. Stick with it!" },
-        { time: "Week 6-8", status: "First improvements", desc: "Fewer new breakouts, existing ones healing faster. You should see SOME improvement." },
-        { time: "Week 10-12", status: "Visible progress", desc: "Clearer skin, reduced inflammation. Noticeable difference from baseline." },
-        { time: "Month 4-6", status: "Significant improvement", desc: "Most mild-moderate acne should be well-controlled by now." },
-        { time: "Ongoing", status: "Maintenance", desc: "Continue your routine to prevent recurrence. Acne is managed, not cured." },
-      ].map((item, index) => (
-        <div key={index} className="bg-card border border-border rounded-xl p-3 flex gap-3">
+      {[{
+      time: "Week 1-2",
+      status: "Adjustment period",
+      desc: "Possible initial irritation, dryness. This is completely normal."
+    }, {
+      time: "Week 3-4",
+      status: "Purging may happen",
+      desc: "Skin may look worse before better with retinoids/acids. Stick with it!"
+    }, {
+      time: "Week 6-8",
+      status: "First improvements",
+      desc: "Fewer new breakouts, existing ones healing faster. You should see SOME improvement."
+    }, {
+      time: "Week 10-12",
+      status: "Visible progress",
+      desc: "Clearer skin, reduced inflammation. Noticeable difference from baseline."
+    }, {
+      time: "Month 4-6",
+      status: "Significant improvement",
+      desc: "Most mild-moderate acne should be well-controlled by now."
+    }, {
+      time: "Ongoing",
+      status: "Maintenance",
+      desc: "Continue your routine to prevent recurrence. Acne is managed, not cured."
+    }].map((item, index) => <div key={index} className="bg-card border border-border rounded-xl p-3 flex gap-3">
           <div className="bg-primary/10 text-primary text-xs font-medium px-2 py-1 rounded-full h-fit whitespace-nowrap">{item.time}</div>
           <div>
             <p className="text-sm font-medium text-foreground">{item.status}</p>
             <p className="text-xs text-muted-foreground">{item.desc}</p>
           </div>
-        </div>
-      ))}
+        </div>)}
     </div>
 
     <div className="bg-card border border-border rounded-xl p-4">
@@ -973,105 +1006,105 @@ const TimelineContent = () => (
         <li className="font-medium text-primary">• Be patient. Be consistent. Trust the process. 💜</li>
       </ul>
     </div>
-  </div>
-);
-
-const sectionContent: Record<string, { title: string; description: string; component: React.ReactNode }> = {
+  </div>;
+const sectionContent: Record<string, {
+  title: string;
+  description: string;
+  component: React.ReactNode;
+}> = {
   understanding: {
     title: "Understanding Your Acne",
     description: "Learn what causes acne, the different types, and how to assess severity.",
-    component: <UnderstandingContent />,
+    component: <UnderstandingContent />
   },
   treatments: {
     title: "Evidence-Based Treatments",
     description: "NICE-recommended treatments including over-the-counter and prescription options.",
-    component: <TreatmentsContent />,
+    component: <TreatmentsContent />
   },
   routine: {
     title: "Building Your Routine",
     description: "Morning and evening routines with evidence-based active ingredients.",
-    component: <RoutineContent />,
+    component: <RoutineContent />
   },
   prescription: {
     title: "When to Seek Prescription Help",
     description: "Signs you need professional help and what treatments are available.",
-    component: <PrescriptionContent />,
+    component: <PrescriptionContent />
   },
   mistakes: {
     title: "Common Mistakes to Avoid",
     description: "Pitfalls that can delay progress or make acne worse.",
-    component: <MistakesContent />,
+    component: <MistakesContent />
   },
   "action-plan": {
     title: "Your 12-Week Action Plan",
     description: "A structured approach to introducing treatments and tracking progress.",
-    component: <ActionPlanContent />,
+    component: <ActionPlanContent />
   },
   purging: {
     title: "Purging vs Bad Reactions",
     description: "How to tell if your skin is adjusting or if a product isn't right for you.",
-    component: <PurgingContent />,
+    component: <PurgingContent />
   },
   scars: {
     title: "Treating Scars & Marks",
     description: "Understanding PIE, PIH, and permanent scarring — and what helps.",
-    component: <ScarsContent />,
+    component: <ScarsContent />
   },
   layering: {
     title: "Layering Actives Safely",
     description: "Which ingredients can be used together and what to keep separate.",
-    component: <LayeringContent />,
+    component: <LayeringContent />
   },
   emergency: {
     title: "Emergency Spot Treatment",
     description: "Quick fixes for sudden breakouts before important events.",
-    component: <EmergencyContent />,
+    component: <EmergencyContent />
   },
   pregnancy: {
     title: "Pregnancy-Safe Options",
     description: "Safe acne treatments during pregnancy according to UK guidelines.",
-    component: <PregnancyContent />,
+    component: <PregnancyContent />
   },
   "body-acne": {
     title: "Body Acne",
     description: "Treating acne on your back, chest, and shoulders.",
-    component: <BodyAcneContent />,
+    component: <BodyAcneContent />
   },
   hormonal: {
     title: "Hormonal Acne & PCOS",
     description: "Understanding and treating hormone-related breakouts.",
-    component: <HormonalContent />,
+    component: <HormonalContent />
   },
   makeup: {
     title: "Makeup Tips",
     description: "Choosing products that won't worsen your acne.",
-    component: <MakeupContent />,
+    component: <MakeupContent />
   },
   "mental-health": {
     title: "Mental Health & Support",
     description: "The emotional impact of acne and where to get help.",
-    component: <MentalHealthContent />,
+    component: <MentalHealthContent />
   },
   diet: {
     title: "Diet & Lifestyle",
     description: "What research says about diet and practical lifestyle tips.",
-    component: <DietContent />,
+    component: <DietContent />
   },
   budget: {
     title: "Budget-Friendly Routines",
     description: "Effective UK pharmacy products that won't break the bank.",
-    component: <BudgetContent />,
+    component: <BudgetContent />
   },
   timeline: {
     title: "Realistic Timeline",
     description: "What to expect week by week when starting treatment.",
-    component: <TimelineContent />,
-  },
+    component: <TimelineContent />
+  }
 };
-
 const AcneGuide = () => {
   const [activeSection, setActiveSection] = useState("understanding");
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -1087,36 +1120,22 @@ const AcneGuide = () => {
       "name": "ReSKN Clinic"
     }
   };
-
   const currentContent = sectionContent[activeSection];
   const SectionIcon = sections.find(s => s.id === activeSection)?.icon || BookOpen;
-
-  return (
-    <>
-      <SEO
-        title="Complete Acne Guide | Evidence-Based Treatment | ReSKN Clinic"
-        description="A comprehensive guide to understanding, treating, and managing acne. Learn about acne types, causes, NICE-recommended treatments, and build your evidence-based routine."
-        keywords="acne guide, acne treatment UK, acne skincare routine, benzoyl peroxide, adapalene, retinoids, NICE guidelines acne, hormonal acne, PCOS acne, ReSKN Clinic"
-        canonical="https://resknclinic.co.uk/guides/acne"
-        structuredData={structuredData}
-      />
+  return <>
+      <SEO title="Complete Acne Guide | Evidence-Based Treatment | ReSKN Clinic" description="A comprehensive guide to understanding, treating, and managing acne. Learn about acne types, causes, NICE-recommended treatments, and build your evidence-based routine." keywords="acne guide, acne treatment UK, acne skincare routine, benzoyl peroxide, adapalene, retinoids, NICE guidelines acne, hormonal acne, PCOS acne, ReSKN Clinic" canonical="https://resknclinic.co.uk/guides/acne" structuredData={structuredData} />
       <div className="pt-16">
         {/* Hero Section */}
         <div className="bg-gradient-to-br from-purple-deep via-purple to-purple-light py-10 md:py-14">
           <div className="container mx-auto px-4 max-w-5xl">
-            <Link
-              to="/guides"
-              className="inline-flex items-center text-sm text-white/80 hover:text-white mb-4 transition-colors"
-            >
+            <Link to="/guides" className="inline-flex items-center text-sm text-white/80 hover:text-white mb-4 transition-colors">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Guides
             </Link>
             <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-3 text-white">
               The Complete Acne Guide
             </h1>
-            <p className="text-base md:text-lg text-white/90 max-w-2xl">
-              Evidence-based treatment following UK clinical guidelines.
-            </p>
+            <p className="text-base md:text-lg text-white/90 max-w-2xl">Treatment following UK clinical guidelines.</p>
             <p className="text-xs text-white/60 mt-2">
               Based on NICE NG198 & British Association of Dermatologists Guidelines
             </p>
@@ -1142,23 +1161,13 @@ const AcneGuide = () => {
               <div className="grid md:grid-cols-[240px_1fr] gap-6">
                 {/* Tab Buttons - Vertical on desktop, horizontal scroll on mobile */}
                 <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0 scrollbar-hide md:max-h-[70vh] md:overflow-y-auto">
-                  {sections.map((section) => {
-                    const Icon = section.icon;
-                    return (
-                      <button
-                        key={section.id}
-                        onClick={() => setActiveSection(section.id)}
-                        className={`flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-200 flex-shrink-0 md:flex-shrink ${
-                          activeSection === section.id
-                            ? 'bg-primary text-white shadow-md'
-                            : 'bg-card hover:bg-accent text-foreground border border-border'
-                        }`}
-                      >
+                  {sections.map(section => {
+                  const Icon = section.icon;
+                  return <button key={section.id} onClick={() => setActiveSection(section.id)} className={`flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-200 flex-shrink-0 md:flex-shrink ${activeSection === section.id ? 'bg-primary text-white shadow-md' : 'bg-card hover:bg-accent text-foreground border border-border'}`}>
                         <Icon className={`w-4 h-4 flex-shrink-0 ${activeSection === section.id ? 'text-white' : 'text-primary'}`} />
                         <span className="font-medium text-sm whitespace-nowrap">{section.label}</span>
-                      </button>
-                    );
-                  })}
+                      </button>;
+                })}
                 </div>
 
                 {/* Content Area */}
@@ -1204,8 +1213,6 @@ const AcneGuide = () => {
           </div>
         </section>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default AcneGuide;
