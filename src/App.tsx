@@ -20,6 +20,7 @@ const LaserHairRemoval = lazy(() => import("./pages/LaserHairRemoval"));
 const SkinClinic = lazy(() => import("./pages/SkinClinic"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
+const FAQ = lazy(() => import("./pages/FAQ"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Concerns
@@ -86,6 +87,7 @@ const App = () => (
                   <Route path="/skin-clinic" element={<SkinClinic />} />
                   <Route path="/privacy" element={<Privacy />} />
                   <Route path="/terms" element={<Terms />} />
+                  <Route path="/faq" element={<FAQ />} />
                   
                   
                   {/* Concerns */}
