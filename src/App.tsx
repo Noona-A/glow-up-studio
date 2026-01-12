@@ -22,11 +22,7 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-// Services
-const ServicesHub = lazy(() => import("./pages/services/ServicesHub"));
-const OnlineConsultation = lazy(() => import("./pages/services/OnlineConsultation"));
-const InClinicConsultation = lazy(() => import("./pages/services/InClinicConsultation"));
-const PrescriptionAcne = lazy(() => import("./pages/services/PrescriptionAcne"));
+// Concerns
 
 // Concerns
 const ConcernsHub = lazy(() => import("./pages/concerns/ConcernsHub"));
@@ -91,11 +87,6 @@ const App = () => (
                   <Route path="/privacy" element={<Privacy />} />
                   <Route path="/terms" element={<Terms />} />
                   
-                  {/* Services */}
-                  <Route path="/services" element={<ServicesHub />} />
-                  <Route path="/services/online-consultation" element={<OnlineConsultation />} />
-                  <Route path="/services/in-clinic-consultation" element={<InClinicConsultation />} />
-                  <Route path="/services/prescription-acne" element={<PrescriptionAcne />} />
                   
                   {/* Concerns */}
                   <Route path="/concerns" element={<ConcernsHub />} />
