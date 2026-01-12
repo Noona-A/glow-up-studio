@@ -174,7 +174,7 @@ const TreatmentsContent = () => <div className="space-y-4">
     <div className="bg-card border border-border rounded-xl p-4">
       <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
         <h3 className="font-semibold text-foreground text-sm">Adapalene (Retinoid) 0.1%</h3>
-        <span className="bg-purple/10 text-purple-deep text-xs font-medium px-2 py-0.5 rounded-full">NICE Recommended</span>
+        <span className="bg-purple/10 text-purple-deep text-xs font-medium px-2 py-0.5 rounded-full"> Recommended</span>
       </div>
       <p className="text-xs text-muted-foreground mb-2">Normalises skin cell turnover and prevents clogged pores. Start 2-3x weekly at night, use a pea-sized amount. Expect some dryness initially.</p>
       <div className="bg-red-50/80 border border-red-200 rounded-lg p-2 flex items-start gap-2">
