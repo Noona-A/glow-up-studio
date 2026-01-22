@@ -1,7 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -96,8 +94,7 @@ const SkinAssessmentForm: React.FC = () => {
           title="Form Submitted | ReSKN Clinic"
           description="Your skin assessment form has been submitted successfully."
         />
-        <Header />
-        <main className="pt-20 min-h-screen bg-background">
+        <div className="min-h-screen bg-background">
           <div className="container mx-auto px-4 py-12 md:py-20">
             <Card className="max-w-lg mx-auto text-center">
               <CardContent className="pt-8 pb-8">
@@ -125,8 +122,7 @@ const SkinAssessmentForm: React.FC = () => {
               </CardContent>
             </Card>
           </div>
-        </main>
-        <Footer />
+        </div>
       </>
     );
   }
@@ -137,9 +133,8 @@ const SkinAssessmentForm: React.FC = () => {
         title="Skin Assessment Form | ReSKN Clinic"
         description="Complete your Fitzpatrick skin type assessment. This helps us determine safe and effective laser settings for your treatment."
       />
-      <Header />
       
-      <main className="pt-20 min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-accent to-background py-8 md:py-12">
           <div className="container mx-auto px-4">
@@ -279,9 +274,7 @@ const SkinAssessmentForm: React.FC = () => {
 
           </div>
         </div>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };
