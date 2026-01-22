@@ -57,6 +57,8 @@ const AcneGuide = lazy(() => import("./pages/guides/AcneGuide"));
 
 // Forms
 const PatchTestForm = lazy(() => import("./pages/forms/PatchTestForm"));
+const MedicalConsentForm = lazy(() => import("./pages/forms/MedicalConsentForm"));
+const SkinAssessmentForm = lazy(() => import("./pages/forms/SkinAssessmentForm"));
 
 const queryClient = new QueryClient();
 
@@ -125,6 +127,8 @@ const App = () => (
                   
                   {/* Forms */}
                   <Route path="/forms/patch-test" element={<PatchTestForm />} />
+                  <Route path="/forms/medical-consent" element={<MedicalConsentForm />} />
+                  <Route path="/forms/skin-assessment" element={<SkinAssessmentForm />} />
                   
                   {/* Catch-all */}
                   <Route path="*" element={<NotFound />} />
