@@ -64,9 +64,9 @@ const HomepageContent = () => {
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Award className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="font-serif text-lg font-medium mb-2">Medical-Grade Results</h3>
+              <h3 className="font-serif text-lg font-medium mb-2">Professional Results</h3>
               <p className="text-muted-foreground text-sm">
-                Access prescription-strength treatments and professional-grade skincare for visible, lasting results.
+                Access professional-grade skincare and targeted treatments for visible, lasting results.
               </p>
             </div>
             <div className="text-center p-6">
@@ -75,7 +75,7 @@ const HomepageContent = () => {
               </div>
               <h3 className="font-serif text-lg font-medium mb-2">Flexible Appointments</h3>
               <p className="text-muted-foreground text-sm">
-                Book online or in-clinic consultations at your convenience. Same-week appointments often available.
+                Book online video consultations at your convenience. Same-week appointments often available.
               </p>
             </div>
           </div>
@@ -95,14 +95,14 @@ const HomepageContent = () => {
               Skin Clinic Windsor
             </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              Our comprehensive skin consultations address a wide range of concerns including acne, 
+              Our comprehensive online skin consultations address a wide range of concerns including acne, 
               pigmentation, rosacea, eczema, and anti-ageing. Using evidence-informed protocols, 
-              we create personalised treatment plans that may include prescription medications, 
-              medical-grade skincare, and targeted in-clinic treatments.
+              we create personalised treatment plans that include medical-grade skincare 
+              and targeted product recommendations.
             </p>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Based in Windsor, Berkshire, ReSKN Clinic offers both online video consultations 
-              and in-person appointments, making expert skin care accessible wherever you are.
+              Based in Windsor, Berkshire, ReSKN Clinic offers convenient online video consultations, 
+              making expert skin care accessible wherever you are.
             </p>
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
               <Link to="/skin-clinic">Learn About Skin Consultations</Link>
