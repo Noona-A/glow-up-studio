@@ -4,7 +4,7 @@ import { FitzpatrickResult, fitzpatrickQuestions } from './fitzpatrickScoring';
 // EmailJS Configuration - User needs to replace these with their own credentials
 const EMAILJS_SERVICE_ID = 'service_s2m1r8g';
 const EMAILJS_TEMPLATE_ID = 'template_sfokh15';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const EMAILJS_PUBLIC_KEY = 'scmTgXI15Y5n4f7Mo';
 
 export interface PatientDetails {
   fullName: string;
@@ -206,7 +206,7 @@ Description: ${fitzpatrickResult.description}
 
 export async function sendFormEmail(submission: FormSubmission): Promise<{ success: boolean; error?: string }> {
   // Check if EmailJS is configured
-  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY || EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
     console.warn('EmailJS not configured. Please update the credentials in src/lib/emailService.ts');
     return { 
       success: false, 
