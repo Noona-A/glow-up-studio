@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, AlertTriangle, CheckCircle, XCircle, Clock, Sparkles, ShieldCheck, Heart, AlertCircle, Pill, Droplets, Sun, Moon, ChevronRight, BookOpen, FlaskConical, Calendar, Zap, ShoppingBag, Timer, Baby, Shirt, Stethoscope, Palette, HeartHandshake, Apple } from "lucide-react";
+import { ArrowLeft, AlertTriangle, CheckCircle, XCircle, Clock, Sparkles, ShieldCheck, Heart, AlertCircle, Droplets, Sun, Moon, ChevronRight, BookOpen, FlaskConical, Calendar, Zap, ShoppingBag, Timer, Baby, Shirt, Stethoscope, Palette, HeartHandshake, Apple } from "lucide-react";
 import SEO from "@/components/SEO";
 const sections = [{
   id: "understanding",
@@ -15,10 +15,6 @@ const sections = [{
   id: "routine",
   label: "Your Routine",
   icon: Sun
-}, {
-  id: "prescription",
-  label: "Prescription Help",
-  icon: Pill
 }, {
   id: "mistakes",
   label: "Common Mistakes",
@@ -243,40 +239,7 @@ const RoutineContent = () => <div className="space-y-6">
       <h3 className="font-semibold text-foreground text-sm mb-2">Recommended First-Line Approaches</h3>
       <div className="text-xs text-muted-foreground space-y-2">
         <p><strong>For Mild-Moderate:</strong> Adapalene 0.1% + Benzoyl Peroxide 2.5% combination (e.g., Differin + Acnecide) OR Benzoyl Peroxide + Azelaic Acid</p>
-        <p><strong>For Moderate-Severe:</strong> Consider professional consultation for prescription options (oral antibiotics + topical combination)</p>
-      </div>
-    </div>
-  </div>;
-const PrescriptionContent = () => <div className="space-y-4">
-   
-
-    <div className="bg-purple-50/80 border border-purple-200 rounded-xl p-4">
-      <h3 className="font-semibold text-purple-900 mb-2 text-sm">When to Seek Professional Help</h3>
-      <ul className="text-xs text-purple-800 space-y-1">
-        <li>• Moderate-severe acne not responding to over-the-counter products after 12 weeks of consistent use</li>
-        <li>• Nodules or cysts present (deep, painful lumps)</li>
-        <li>• Acne causing scarring</li>
-        <li>• Significant impact on your mental health or confidence</li>
-        <li>• You suspect hormonal acne (jawline breakouts, related to periods)</li>
-      </ul>
-    </div>
-
-    <div className="space-y-3">
-      <div className="bg-card border border-border rounded-xl p-3">
-        <h3 className="font-semibold text-foreground text-sm">Topical Antibiotics</h3>
-        <p className="text-xs text-muted-foreground">Clindamycin or erythromycin — always prescribed with benzoyl peroxide to prevent bacteria becoming resistant</p>
-      </div>
-      <div className="bg-card border border-border rounded-xl p-3">
-        <h3 className="font-semibold text-foreground text-sm">Oral Antibiotics</h3>
-        <p className="text-xs text-muted-foreground">Lymecycline or doxycycline — typically 3-month courses. You should see improvement within 6-8 weeks</p>
-      </div>
-      <div className="bg-card border border-border rounded-xl p-3">
-        <h3 className="font-semibold text-foreground text-sm">Combined Oral Contraceptives</h3>
-        <p className="text-xs text-muted-foreground">For hormonal acne in women — options include Dianette, Yasmin. Takes 3-4 months to see improvement</p>
-      </div>
-      <div className="bg-card border border-border rounded-xl p-3">
-        <h3 className="font-semibold text-foreground text-sm">Isotretinoin (Roaccutane)</h3>
-        <p className="text-xs text-muted-foreground">Dermatologist-only prescription for severe or scarring acne. Very effective but requires careful monitoring</p>
+        <p><strong>For Moderate-Severe:</strong> Consider a professional skin consultation for personalised guidance and treatment recommendations</p>
       </div>
     </div>
   </div>;
@@ -953,11 +916,6 @@ const sectionContent: Record<string, {
     title: "Building Your Routine",
     description: "Morning and evening routines with evidence-based active ingredients.",
     component: <RoutineContent />
-  },
-  prescription: {
-    title: "When to Seek Prescription Help",
-    description: "Signs you need professional help and what treatments are available.",
-    component: <PrescriptionContent />
   },
   mistakes: {
     title: "Common Mistakes to Avoid",
