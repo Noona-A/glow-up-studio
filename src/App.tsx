@@ -55,6 +55,9 @@ const SnailMucin = lazy(() => import("./pages/ingredients/SnailMucin"));
 const GuidesHub = lazy(() => import("./pages/guides/GuidesHub"));
 const AcneGuide = lazy(() => import("./pages/guides/AcneGuide"));
 
+// Forms
+const PatchTestForm = lazy(() => import("./pages/forms/PatchTestForm"));
+
 const queryClient = new QueryClient();
 
 // Loading component
@@ -119,6 +122,9 @@ const App = () => (
                   {/* Guides */}
                   <Route path="/guides" element={<GuidesHub />} />
                   <Route path="/guides/acne" element={<AcneGuide />} />
+                  
+                  {/* Forms */}
+                  <Route path="/forms/patch-test" element={<PatchTestForm />} />
                   
                   {/* Catch-all */}
                   <Route path="*" element={<NotFound />} />
